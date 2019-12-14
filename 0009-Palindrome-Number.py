@@ -19,15 +19,13 @@
 # Follow up:
 # Coud you solve it without converting the integer to a string?
 
-def isPalindrome(x):
-    if (x<0 or (x%10 == 0 and x!=0)): #Negative or Ending with 0 but not 0 cases
-        return False
-    rev = 0
-    while(x>rev):
-        rev = (rev*10)+(x%10)
-        x=x//10
-    return rev==x or rev//10==x #Removing middle digit from a number with odd length using rev//10
-
-x = int(input("Enter a number: "))
-
-print(isPalindrome(x))
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if (x<0 or (x%10 == 0 and x!=0)): #Negative or Ending with 0 but not 0 cases
+            return False
+        rev = 0
+        while(x>rev):
+            rev = (rev*10)+(x%10)
+            x=x//10
+        return rev==x or rev//10==x #Removing middle digit from a number with odd length using rev//10
+        
