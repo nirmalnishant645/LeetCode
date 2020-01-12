@@ -14,10 +14,8 @@ class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
         if len(nums)==0:
             return 0
-        sum = maxSum = nums[0]
+        summ = maxSum = nums[0]
         for i in range(1, len(nums)):
-            sum = nums[i] if sum<0 else sum+nums[i] 
-            if sum>maxSum:
-                maxSum = sum
-                
+            summ = nums[i] if summ<0 else summ+nums[i]
+            maxSum = summ if summ>maxSum else maxSum
         return maxSum
