@@ -45,7 +45,7 @@ class MyQueue:
         Removes the element from in front of queue and returns that element.
         """
         self.switchStack()
-        return None if not self.myStack2 else self.myStack2.pop() #Does it really needed to be checked if the myStack2 is empty or not?
+        return None if not self.myStack2 else self.myStack2.pop()
 
 
     def peek(self) -> int:
