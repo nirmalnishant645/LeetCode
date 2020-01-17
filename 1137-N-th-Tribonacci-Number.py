@@ -30,16 +30,13 @@ Constraints:
 '''
 class Solution:
     def tribonacci(self, n: int) -> int:
-        a = 0
-        b = c = 1
         if n == 0:
             return 0
-        elif n == 1 or n == 2:
+        elif 1<=n<=2:
             return 1
-        else:
-            i = 3
-            while i <= n:
-                sum = a+b+c
-                a, b, c = b, c, sum
-                i += 1
-            return sum
+        a = 0
+        b = c = 1
+        for _ in range(2,n):
+            sum = a+b+c
+            a, b, c = b, c, sum
+        return sum
