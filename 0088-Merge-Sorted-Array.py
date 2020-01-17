@@ -36,4 +36,4 @@ class Solution:
                     m -=1
             elif n >= 0:
                 nums1[i] = nums2[n]
-                n -= 1
+                n = n - 1
