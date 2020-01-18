@@ -27,8 +27,8 @@ A.length is even
 '''
 class Solution:
     def repeatedNTimes(self, A: List[int]) -> int:
-        d = {}
-        for i in range(len(A)):
-            d[A[i]] = d.get(A[i],0) + 1
-            if d[A[i]] == len(A)/2:
-                return A[i]
+        s = set()
+        for i in A:
+            if i in s:
+                return i
+            s.add(i)
