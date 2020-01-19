@@ -33,10 +33,8 @@ class Solution:
         d = {')':'(', '}':'{', ']':'['}
         stack = []
         for i in s:
-            if not stack:
+            if i in d.values():
                 stack.append(i)
-            elif i in d and stack[-1] == d[i]:
-                stack.pop()
-            else:
-                stack.append(i)
+            elif not stack or stack.pop() != d[i]:
+                return False
         return not stack
