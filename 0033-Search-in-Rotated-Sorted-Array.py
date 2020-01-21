@@ -19,35 +19,44 @@ Example 2:
 Input: nums = [4,5,6,7,0,1,2], target = 3
 Output: -1
 '''
+#Method NN
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         lower, upper = 0, len(nums)-1
-        
         while lower <= upper:
-            mid = (lower+upper)//2
-            
+            flag, mid = 1, (lower+upper)//2
             if nums[mid] == target:
                 return mid
-            elif nums[mid] > target and target < nums[0]:
+            elif nums[lower] <= nums[mid]:
+                if flag and nums[lower] <= target < nums[mid]:
+                    upper = mid - 1
+                    flag = 0
+                    continue
                 lower = mid + 1
-                while lower <= upper:
-                    mid = (lower+upper)//2
-                    
-                    if nums[mid] == target:
-                        return mid
-                    elif nums[mid] < target:
-                        lower = mid + 1
-                    else:
-                        upper = mid - 1
-            elif nums[mid] < target and target > nums[len(nums)-1]:
+            else:
+                if flag and nums[mid] < target <= nums[upper]:
+                    lower = mid + 1 
+                    flag = 0
+                    continue
                 upper = mid - 1
-                while lower <= upper:
-                    mid = (lower+upper)//2
-                    
-                    if nums[mid] == target:
-                        return mid
-                    elif nums[mid] < target:
-                        lower = mid + 1
-                    else:
-                        upper = mid - 1
+        return -1
+    
+#Method AK
+class Solution(object):
+    def search(self, nums, target):
+        start, end = 0, len(nums) - 1
+        while start <= end:
+            mid = (start + end)//2
+            if nums[mid] == target:
+                return mid
+            elif nums[start] <= nums[mid]:
+                if nums[start] <= target < nums[mid]:
+                    end = mid -1
+                else:
+                    start = mid + 1
+            else:
+                if nums[end] >= target > nums[mid]:
+                    start = mid + 1
+                else:
+                    end = mid - 1
         return -1
