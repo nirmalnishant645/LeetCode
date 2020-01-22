@@ -48,9 +48,5 @@ class Solution:
         for i in S:
             if count > 0 and i == '(' or count > 1 and i == ')':
                 res.append(i)
-            if i == '(':
-                count += 1
-            else:
-                count -= 1
-
+            count += 1 if i == '(' else -1
         return ''.join(res)
