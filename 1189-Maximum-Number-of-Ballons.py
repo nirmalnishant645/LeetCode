@@ -35,6 +35,6 @@ class Solution:
                 d[i] = d.get(i, 0) + 1
         d['l'], d['o'] = d.get('l', 0) // 2, d.get('o', 0) // 2
         least = d['b']
-        for alpha, count in d.items():
+        for count in d.values():
             least = count if count < least else least
         return least
