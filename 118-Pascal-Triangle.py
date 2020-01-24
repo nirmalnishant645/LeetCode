@@ -17,6 +17,7 @@ Output:
 
 
 '''
+#Method 1
 class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
         res = []
@@ -26,5 +27,18 @@ class Solution:
             row = [1]
             for j in range(1,i):
                 row.append(row[len(row)-1] * (i - j) // j)
+            res.append(row)           
+        return res
+
+#Method 2
+class Solution:
+    def generate(self, numRows: int) -> List[List[int]]:
+        res = []
+        if numRows == 1:
+            return [[1]]
+        for i in range(1, numRows + 1):
+            row = [1]*i
+            for j in range(1, i-1):
+                row[j] = res[i-2][j-1] + res[i-2][j]
             res.append(row)           
         return res
