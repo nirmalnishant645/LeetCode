@@ -16,11 +16,7 @@ Output: 4
 '''
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        if len(nums) == 1:
-               return nums[0]
-        while True:
-            a = nums.pop(0)
-            if a in nums:
-                nums.append(a)
-            else:
-                return a
+        res = 0
+        for i in nums:
+            res ^= i
+        return res
