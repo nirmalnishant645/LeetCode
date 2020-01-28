@@ -23,18 +23,9 @@ class Solution:
     def heightChecker(self, heights: List[int]) -> int:
         if len(heights) == 1:
             return 0
-        arr = [i for i in heights]
+        arr = sorted(heights)
         res = 0
-        for i in range(len(arr)-1, 0, -1):
-            flag = True
-            for j in range(i):
-                if arr[j]>arr[j+1]:
-                    arr[j], arr[j+1] = arr[j+1], arr[j]
-                    flag = False
-            if flag:
-                break
         for i in range(len(heights)):
             if heights[i] != arr[i]:
                 res += 1
         return res
-            
