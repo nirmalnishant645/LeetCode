@@ -46,20 +46,19 @@ class MyLinkedList:
         Initialize your data structure here.
         """
         self.head = None
+        self.tail = None
         self.size = 0
-        
 
     def get(self, index: int) -> int:
         """
         Get the value of the index-th node in the linked list. If the index is invalid, return -1.
         """
-        if index < 0 or index >= self.size:
+        if index >= self.size:
             return -1
-        temp = self.head
-        while index > 0:
-            temp = temp.next
-            index -= 1
-        return temp.data
+        cur_node = self.head
+        for _ in range(index):
+            cur_node = cur_node.next
+        return cur_node.data
         
 
     def addAtHead(self, val: int) -> None:
@@ -69,6 +68,7 @@ class MyLinkedList:
         temp = Node(val)
         if not self.head:
             self.head = temp
+            self.tail = self.head
         else:
             temp.next = self.head
             self.head = temp
@@ -79,13 +79,13 @@ class MyLinkedList:
         """
         Append a node of value val to the last element of the linked list.
         """
-        newNode = Node(val)
-        if not self.head:
-            self.head = newNode
-        temp = self.head
-        while temp.next is not None:
-            temp = temp.next
-        temp.next = newNode
+        temp = Node(val)
+        if not self.tail:
+            self.tail = temp
+            self.head = self.tail
+        else:
+            self.tail.next = temp
+            self.tail = temp
         self.size += 1
         
 
@@ -93,19 +93,19 @@ class MyLinkedList:
         """
         Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted.
         """
-        if index < 0 or index > self.size:
+        if index > self.size:
             return
         if index == 0:
             self.addAtHead(val)
         elif index == self.size:
             self.addAtTail(val)
         else:
-            temp = self.head
-            i = 0
-            while i < index:
-                temp = temp.next
-                i += 1
-            temp.next = Node(val)
+            temp = Node(val)
+            cur_node = self.head
+            for _ in range(index - 1):
+                cur_node = cur_node.next
+            temp.next = cur_node.next
+            cur_node.next = temp
             self.size += 1
         
 
@@ -113,15 +113,35 @@ class MyLinkedList:
         """
         Delete the index-th node in the linked list, if the index is valid.
         """
-        if index < 0 or index > self.size:
+        if index >= self.size:
             return
-        temp = self.head
-        i = 0
-        while i < index:
-            temp = temp.next
-            i += 1
-        temp = None
-        self.size -= 1
+        if index == 0:
+            if not self.head:
+                return
+            if self.head is self.tail:
+                self.head = self.tail = None
+            else:
+                self.head = self.head.next
+            self.size -= 1
+        elif index == self.size - 1:
+            if not self.tail:
+                return
+            if self.tail is self.head:
+                self.tail = self.head = None
+            else:
+                cur_node = self.head
+                while cur_node.next != self.tail:
+                    cur_node = cur_node.next
+                cur_node.next = None
+                self.tail = cur_node
+            self.size -= 1
+        else:
+            cur_node = self.head
+            for _ in range(index - 1):
+                cur_node = cur_node.next
+            cur_node.next = cur_node.next.next
+            self.size -= 1            
+
 
 # Your MyLinkedList object will be instantiated and called as such:
 # obj = MyLinkedList()
