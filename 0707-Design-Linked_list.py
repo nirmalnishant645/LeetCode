@@ -49,7 +49,7 @@ class MyLinkedList:
         self.tail = None
         self.size = 0
 
-    def get(self, index: int) -> int:
+    def get(self, index: int) -> int: # Time Complexity: O(n)
         """
         Get the value of the index-th node in the linked list. If the index is invalid, return -1.
         """
@@ -61,7 +61,7 @@ class MyLinkedList:
         return cur_node.data
         
 
-    def addAtHead(self, val: int) -> None:
+    def addAtHead(self, val: int) -> None: # Time Complexity: O(1)
         """
         Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list.
         """
@@ -75,7 +75,7 @@ class MyLinkedList:
         self.size += 1
         
 
-    def addAtTail(self, val: int) -> None:
+    def addAtTail(self, val: int) -> None: # Time Complexity: O(1)
         """
         Append a node of value val to the last element of the linked list.
         """
@@ -89,7 +89,7 @@ class MyLinkedList:
         self.size += 1
         
 
-    def addAtIndex(self, index: int, val: int) -> None:
+    def addAtIndex(self, index: int, val: int) -> None: # Time Complexity: O(n)
         """
         Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted.
         """
@@ -109,7 +109,7 @@ class MyLinkedList:
             self.size += 1
         
 
-    def deleteAtIndex(self, index: int) -> None:
+    def deleteAtIndex(self, index: int) -> None: # Time Complexity: O(n)
         """
         Delete the index-th node in the linked list, if the index is valid.
         """
