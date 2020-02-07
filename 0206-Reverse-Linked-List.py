@@ -16,6 +16,7 @@ A linked list can be reversed either iteratively or recursively. Could you imple
 #         self.val = x
 #         self.next = None
 
+# Time Complexity - O(n), Space Complexity - O(1)
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
         temp = None
