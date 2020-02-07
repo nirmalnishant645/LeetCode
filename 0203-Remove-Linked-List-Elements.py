@@ -14,8 +14,6 @@ Output: 1->2->3->4->5
 
 class Solution:
     def removeElements(self, head: ListNode, val: int) -> ListNode:
-        if not head:
-            return None
         zero_node = ListNode(0)
         zero_node.next = head
         cur_node = zero_node
