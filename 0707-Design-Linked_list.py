@@ -116,16 +116,12 @@ class MyLinkedList:
         if index >= self.size:
             return
         if index == 0:
-            if not self.head:
-                return
             if self.head is self.tail:
                 self.head = self.tail = None
             else:
                 self.head = self.head.next
             self.size -= 1
         elif index == self.size - 1:
-            if not self.tail:
-                return
             if self.tail is self.head:
                 self.tail = self.head = None
             else:
