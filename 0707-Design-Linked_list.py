@@ -34,7 +34,7 @@ Constraints:
 Please do not use the built-in LinkedList library.
 At most 2000 calls will be made to get, addAtHead, addAtTail,  addAtIndex and deleteAtIndex.
 '''
-cclass Node:
+class Node:
     def __init__(self, data=None):
         self.data = data
         self.next = None
@@ -118,18 +118,13 @@ class MyLinkedList:
         elif index == 0:
             self.head = self.head.next
             self.size -= 1
-        elif index == self.size - 1:
-            cur_node = self.head
-            while cur_node.next != self.tail:
-                cur_node = cur_node.next
-            cur_node.next = None
-            self.tail = cur_node
-            self.size -= 1
         else:
             cur_node = self.head
             for _ in range(index - 1):
                 cur_node = cur_node.next
             cur_node.next = cur_node.next.next
+            if index == self.size - 1:
+                self.tail = cur_node
             self.size -= 1            
 
 
