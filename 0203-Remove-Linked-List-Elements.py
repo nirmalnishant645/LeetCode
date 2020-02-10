@@ -12,6 +12,7 @@ Output: 1->2->3->4->5
 #         self.val = x
 #         self.next = None
 
+#Time Complexity - O(n), Space Complexity - O(1)
 class Solution:
     def removeElements(self, head: ListNode, val: int) -> ListNode:
         zero_node = ListNode(0)
