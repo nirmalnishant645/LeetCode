@@ -16,10 +16,7 @@ Output: 1->1->2->3->4->4
 #Time Complexity - O(n+m), Space Complexity - O(1)
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
-        if not l1:
-            return l2
-        if not l2:
-            return l1
+        if not l1 or not l2: return l1 or l2
         head = cur_node = ListNode(0)
         while l1 and l2:
             if l1.val < l2.val:
@@ -29,20 +26,17 @@ class Solution:
                 cur_node.next = l2
                 l2 = l2.next
             cur_node = cur_node.next
-        if l1:
-            cur_node.next = l1
-        else:
-            cur_node.next = l2
+        cur_node.next = l1 or l2
         return head.next
 
 #Recursive
-#Time Complexity - O(n+m), Space Complexity - O(1)
+#Time Complexity - O(n+m), Space Complexity - O(n+m)
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
-        if not l1:
-            return l2
-        if not l2:
-            return l1
+        if not l1 or not l2: return l1 or l2
         if l1.val <= l2.val:
             l1.next = self.mergeTwoLists(l1.next, l2)
             return l1
+        else:
+            l2.next = self.mergeTwoLists(l2.next, l1)
+            return l2
