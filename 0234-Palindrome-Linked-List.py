@@ -22,21 +22,31 @@ class Solution:
     def isPalindrome(self, head: ListNode) -> bool:
         if not head or not head.next:
             return True
-        slow = fast = prevSlow = head
+        
+        slow = fast = prev_slow = head
+        
+        mid = self.midNode(slow, fast, prev_slow)
+        
+        second_head = self.reverse(mid)
+        
+        while head:
+            if head.val != second_head.val:
+                return False
+            head, second_head = head.next, second_head.next
+        return True
+    
+    def midNode(self, slow, fast, prev_slow):
         while fast and fast.next:
-            prevSlow = slow
+            prev_slow = slow
             slow = slow.next
             fast = fast.next.next
         if fast != None:
             slow = slow.next
-        prevSlow.next = None
+        prev_slow.next = None
+        return slow
+    
+    def reverse(self, head_node):
         prev = None
-        cur_node = slow
-        while cur_node:
-            cur_node.next, prev, cur_node = prev, cur_node, cur_node.next
-        while head:
-            if head.val != prev.val:
-                return False
-            head, prev = head.next, prev.next
-        return True
-        
+        while head_node:
+            head_node.next, prev, head_node = prev, head_node, head_node.next
+        return prev
