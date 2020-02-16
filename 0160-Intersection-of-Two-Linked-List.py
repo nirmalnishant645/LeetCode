@@ -36,12 +36,6 @@ class Solution:
             return None
         curNodeA, curNodeB = headA, headB
         while curNodeA != curNodeB:
-            if not curNodeA:
-                curNodeA = headB
-            else:
-                curNodeA = curNodeA.next
-            if not curNodeB:
-                curNodeB = headA
-            else:
-                curNodeB = curNodeB.next
+            curNodeA = headB if not curNodeA else curNodeA.next
+            curNodeB = headA if not curNodeB else curNodeB.next
         return curNodeA
