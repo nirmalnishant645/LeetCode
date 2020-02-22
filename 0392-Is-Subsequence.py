@@ -20,11 +20,11 @@ If there are lots of incoming S, say S1, S2, ... , Sk where k >= 1B, and you wan
 '''
 class Solution:
     def isSubsequence(self, s: str, t: str) -> bool:
-        sIndex = tIndex = 0
+        s_index = t_index = 0
         
-        while sIndex < len(s) and tIndex < len(t):
-            if s[sIndex] == t[tIndex]:
-                sIndex += 1
-            tIndex += 1
+        while s_index < len(s) and t_index < len(t):
+            if s[s_index] == t[t_index]:
+                s_index += 1
+            t_index += 1
         
-        return sIndex == len(s)
+        return s_index == len(s)
