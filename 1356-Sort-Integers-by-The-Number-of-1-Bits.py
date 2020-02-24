@@ -47,15 +47,12 @@ Constraints:
 '''
 class Solution:
     def sortByBits(self, arr: List[int]) -> List[int]:
-        arr.sort(key = self.finalSort)
+        arr.sort(key = self.count_bits)
         return arr
         
-    def countBits(self, n):
-        count = 0
+    def count_bits(self, n):
+        num, count = n, 0
         while n:
             count += n & 1
             n >>= 1
-        return count
-    
-    def finalSort(self, n):
-        return (self.countBits(n), n)
+        return (count, num)
