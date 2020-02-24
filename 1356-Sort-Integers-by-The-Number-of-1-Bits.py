@@ -47,16 +47,7 @@ Constraints:
 '''
 class Solution:
     def sortByBits(self, arr: List[int]) -> List[int]:
-        if len(arr) == 1:
-            return arr
-             
-        for i in range(len(arr) - 1, 0, -1):
-            for j in range(i):
-                cur, curNext = self.countBits(arr[j]), self.countBits(arr[j + 1])
-                if cur > curNext:
-                    arr[j], arr[j + 1] = arr[j + 1], arr[j]
-                if cur == curNext and arr[j] > arr[j+1]:
-                        arr[j], arr[j + 1] = arr[j + 1], arr[j]
+        arr.sort(key = self.finalSort)
         return arr
         
     def countBits(self, n):
@@ -65,3 +56,6 @@ class Solution:
             count += n & 1
             n >>= 1
         return count
+    
+    def finalSort(self, n):
+        return (self.countBits(n), n)
