@@ -19,16 +19,13 @@ Note:
 0 <= A[i] <= 10^6
 A is a mountain, as defined above.
 '''
-
 class Solution:
     def peakIndexInMountainArray(self, A: List[int]) -> int:
-        lower, upper = 0, len(A)-1
-
-        while(lower<upper):
-            mid = (lower+upper)//2
-            if (A[mid]>A[mid+1]):
+        lower, upper = 0, len(A) - 1
+        while lower < upper:
+            mid = (lower + upper)//2
+            if A[mid] > A[mid + 1]:
                 upper = mid
             else:
-                lower = mid+1
+                lower = mid + 1
         return upper
-    
