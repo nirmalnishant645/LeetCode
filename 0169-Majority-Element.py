@@ -13,9 +13,10 @@ Output: 2
 '''
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        count = ans = 0
-        for n in nums:
-            if count == 0:
-                ans = n
-            count += 1 if ans == n else -1
-        return ans
+        res, count = nums[0], 1
+        for num in nums:
+            count = count + 1 if num == res else count - 1
+            if not count:
+                res = num
+                count += 1
+        return res
