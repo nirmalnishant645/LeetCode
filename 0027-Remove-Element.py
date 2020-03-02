@@ -39,13 +39,11 @@ for (int i = 0; i < len; i++) {
 '''
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
-        flag = 0
-        index = 0
-        for i in range(len(nums)):
-            index+=1
-            if nums[i]!=val:
-                index-=1
-                nums[i], nums[flag] = nums[flag], nums[i]
-                flag+=1
-        nums=nums[0:len(nums)-index]
-        return len(nums)
+        start, end = 0, len(nums)
+        while start < end:
+            if nums[start] == val:
+                nums[start] = nums[end - 1]
+                end -= 1
+            else:
+                start += 1
+        return end
