@@ -30,18 +30,13 @@ class Solution:
         """
         n = len(nums)
         k = k % n
-        count = start = 0
+        start = count = 0
         while count < n:
             cur = start
-            prev = nums[start]
-            
+            pre = nums[start]
             while True:
                 nex = (cur + k) % n
-                nums[nex], prev = prev, nums[nex]
-                cur = nex
+                nums[nex], pre, cur = pre, nums[nex], nex
                 count += 1
-                
-                if start == cur:
-                    break
-                    
+                if start == cur: break
             start += 1
