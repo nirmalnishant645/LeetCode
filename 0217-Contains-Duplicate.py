@@ -17,9 +17,9 @@ Output: true
 '''
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        s = set()
-        for i in nums:
-            if i in s:
+        integers = set()
+        for num in nums:
+            if num in integers:
                 return True
-            s.add(i)
+            integers.add(num)
         return False
