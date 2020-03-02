@@ -10,6 +10,7 @@ Follow up:
 
 If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 '''
+#Method 1
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
         if len(nums)==0:
@@ -19,3 +20,14 @@ class Solution:
             summ = nums[i] if summ<0 else summ+nums[i]
             maxSum = summ if summ>maxSum else maxSum
         return maxSum
+
+#Method 2
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        if not nums:
+            return 0
+        cur_sum = max_sum = nums[0]
+        for i in range(1, len(nums)):
+            cur_sum = nums[i] if nums[i] > cur_sum + nums[i] else cur_sum + nums[i]
+            max_sum = cur_sum if cur_sum > max_sum else max_sum
+        return max_sum
