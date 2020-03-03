@@ -16,8 +16,8 @@ Output: false
 class Solution:
     def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
         d = {}
-        for i in range(len(nums)):
-            if nums[i] in d and (i - d[nums[i]])<=k:
+        for idx, val in enumerate(nums):
+            if val in d and idx - d[val] <= k:
                 return True
-            d.update({nums[i] : i})
+            d[val] = idx
         return False
