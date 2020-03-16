@@ -55,21 +55,22 @@ Constraints:
 '''
 class Solution:
     def sortString(self, s: str) -> str:
-        alpha = set(s)
-        alpha = sorted(alpha)
-        d = {}
+        alphabets = [0] * 26
+        
+        for c in s:
+            alphabets[ord(c) - ord('a')] += 1
+            
         res = []
-        for i in s:
-            if i in d:
-                d[i] += 1
-            else: d[i] = 1
-        while sum(d.values()):
-            for i in alpha:
-                if i in s and d[i]:
-                    res.append(i)
-                    d[i] -= 1
-            for i in range(len(alpha) - 1, -1, -1):
-                if alpha[i] in s and d[alpha[i]]:
-                    res.append(alpha[i])
-                    d[alpha[i]] -= 1
+        flag = direction = True
+        index = 0
+        while flag:
+            flag = False
+            while (index < len(alphabets) and direction) or (index >= 0 and not direction):
+                if alphabets[index]:
+                    res.append(chr(index + ord('a')))
+                    alphabets[index] -= 1
+                    flag = True
+                index += 1 if direction else -1
+            direction = False if direction else True
+            index += 1 if direction else -1 
         return ''.join(res)
