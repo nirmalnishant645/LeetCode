@@ -43,6 +43,9 @@ class Solution:
                 row_mins[i] = row_mins[i] if row_mins[i] < matrix[i][j] else matrix[i][j]
                 col_maxs[j] = col_maxs[j] if col_maxs[j] > matrix[i][j] else matrix[i][j]
         
+        res = []
         for i in row_mins:
             if i in col_maxs:
-                    return [i]
+                    res.append(i)
+        
+        return res
