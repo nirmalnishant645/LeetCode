@@ -17,10 +17,10 @@ The result can be in any order.
 '''
 class Solution:
     def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
-        dict = {i : 1 for i in nums1}
-        result = []
+        nums = set(nums1)
+        res = []
         for i in nums2:
-            if i in dict and dict[i]:
-                result.append(i)
-                dict[i]=0
-        return result
+            if i in nums:
+                res.append(i)
+                nums.remove(i)
+        return res
