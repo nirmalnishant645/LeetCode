@@ -17,6 +17,8 @@ You may assume the string contains only lowercase alphabets.
 Follow up:
 What if the inputs contain unicode characters? How would you adapt your solution to such case?
 '''
+# Time Complexity: O(n)
+# Space Complexity: O(1)
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
@@ -25,11 +27,8 @@ class Solution:
         letters = {}
         
         for c in s:
-            if c in letters:
-                letters[c] += 1
-            else:
-                letters[c] = 1
-                
+            letters[c] = 1 if c not in letters else letters[c] + 1
+            
         for c in t:
             if c not in letters or not letters[c]:
                 return False
