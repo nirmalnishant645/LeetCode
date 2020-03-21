@@ -27,7 +27,7 @@ class Solution:
         letters = {}
         
         for c in s:
-            letters[c] = 1 if c not in letters else letters[c] + 1
+            letters[c] = letters.get(c, 0) + 1
             
         for c in t:
             if c not in letters or not letters[c]:
