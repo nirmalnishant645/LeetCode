@@ -24,10 +24,7 @@ class Solution:
         d = {}
         res = []
         for num in nums1:
-            if num in d:
-                d[num] += 1
-            else:
-                d[num] = 1
+            d[num] = d.get(num, 0) + 1
         
         for num in nums2:
             if num in d and d[num]:
@@ -35,3 +32,15 @@ class Solution:
                 d[num] -= 1
         
         return res
+    
+'''
+Follow up 1:
+If both arrays are sorted, use two pointers to iterate.
+
+Follow up 2:
+Make a hashmap from numbers in nums1 and loop through nums2 to find the intersection. 
+
+Follow up 3:
+If only nums2 cannot fit in memory, put all elements of nums1 into a HashMap, read chunks of array that fit into the memory, and record the intersections.
+If both nums1 and nums2 are so huge that neither fit into the memory, sort them individually (external sort), then read 2 elements from each array at a time in memory, record intersections.
+'''
