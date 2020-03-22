@@ -25,12 +25,12 @@ class Solution:
         start = max_len = 0
         ch = {}
         
-        for i in range(len(s)):
-            if s[i] in ch and start <= ch[s[i]]:
-                start = ch[s[i]] + 1
+        for i, c in enumerate(s):
+            if c in ch and start <= ch[c]:
+                start = ch[c] + 1
             else:
                 max_len = max(max_len, i - start + 1)
                 
-            ch[s[i]] = i
+            ch[c] = i
             
         return max_len
