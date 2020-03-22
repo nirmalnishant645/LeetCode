@@ -13,13 +13,10 @@ Note: You may assume the string contain only lowercase letters.
 '''
 class Solution:
     def firstUniqChar(self, s: str) -> int:
-        dict = {}
-        for i in range(len(s)):
-            if s[i] not in dict:
-                dict.update({s[i] : [i, 1]})
-            else:
-                dict.update({s[i] : [i, 0]})
-        for char, count in dict.items():
-            if count[1]:
-                return count[0]
+        count = {}
+        for ch in s:
+            count[ch] = count.get(ch, 0) + 1
+        for idx, ch in enumerate(s):
+            if ch in count and count[ch] == 1:
+                return idx
         return -1
