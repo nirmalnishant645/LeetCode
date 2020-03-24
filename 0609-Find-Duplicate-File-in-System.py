@@ -47,8 +47,5 @@ class Solution:
             for file in f:
                 txt, content = file.split("(")
                 file_dir = root + "/" + txt
-                if content not in d:
-                    d[content] = [file_dir]
-                else:
-                    d[content].append(file_dir)
+                d[content] = d.get(content, []) + [file_dir]
         return [d[key] for key in d if len(d[key]) > 1]
