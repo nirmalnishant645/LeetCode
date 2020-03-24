@@ -20,6 +20,8 @@ class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         res = {}
         for s in strs:
-            key = ''.join(sorted(s))
+            key = 0
+            for c in s:
+                key += hash(c)
             res[key] = res.get(key, []) + [s]
         return res.values()
