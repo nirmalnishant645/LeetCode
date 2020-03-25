@@ -15,4 +15,4 @@ class Solution:
             if stack:
                 res[i] = stack[-1] - i
             stack.append(i)
-        return resa
+        return res
