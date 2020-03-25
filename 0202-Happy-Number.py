@@ -19,7 +19,8 @@ class Solution:
         while n not in prev:
             prev.add(n)
             summ = 0
-            for x in str(n):
-                summ += int(x)**2
+            while n:
+                summ += (n % 10)**2
+                n //= 10
             n = summ
         return n == 1
