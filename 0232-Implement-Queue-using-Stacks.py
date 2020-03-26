@@ -28,45 +28,42 @@ class MyQueue:
         """
         Initialize your data structure here.
         """
-        self.myStack1 = []
-        self.myStack2 = []
-
+        self.stack1 = []
+        self.stack2 = []
 
     def push(self, x: int) -> None:
         """
         Push element x to the back of queue.
         """
-        self.myStack1.append(x)
-
-
+        self.stack1.append(x)
+        
 
     def pop(self) -> int:
         """
         Removes the element from in front of queue and returns that element.
         """
-        self.switchStack()
-        return None if not self.myStack2 else self.myStack2.pop()
-
+        self.switch_stack()
+        return None if not self.stack2 else self.stack2.pop()
+        
 
     def peek(self) -> int:
         """
         Get the front element.
         """
-        self.switchStack()
-        return None if not self.myStack2 else self.myStack2[-1]
-
+        self.switch_stack()
+        return None if not self.stack2 else self.stack2[-1]
+        
 
     def empty(self) -> bool:
         """
         Returns whether the queue is empty.
         """
-        return not (self.myStack1 or self.myStack2)
-
-    def switchStack(self):
-        if not self.myStack2:
-            while self.myStack1:
-                self.myStack2.append(self.myStack1.pop())
-
+        return not (self.stack2 or self.stack1)
+    
+    def switch_stack(self):
+        if not self.stack2:
+            while self.stack1:
+                self.stack2.append(self.stack1.pop())
 
 # Your MyQueue object will be instantiated and called as such:
 # obj = MyQueue()
