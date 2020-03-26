@@ -15,12 +15,18 @@ Explanation:
 '''
 class Solution:
     def isHappy(self, n: int) -> bool:
-        prev = set()
-        while n not in prev:
-            prev.add(n)
-            summ = 0
-            while n:
-                summ += (n % 10)**2
-                n //= 10
-            n = summ
-        return n == 1
+        slow = fast = n
+        while True:
+            slow = self.squareSum(slow)
+            fast = self.squareSum(fast)
+            fast = self.squareSum(fast)
+            if slow == fast:
+                break
+        return True if slow == 1 else False
+    
+    def squareSum(self, n):
+        summ = 0
+        while n:
+            summ += (n % 10) ** 2
+            n //= 10
+        return summ
