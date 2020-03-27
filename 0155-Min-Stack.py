@@ -30,12 +30,20 @@ class MinStack:
         
 
     def push(self, x: int) -> None:
+        '''
+        Time Complexity: O(1)
+        Space Complecity: O(1)
+        '''
         self.stack.append(x)
         if not self.min_stack or x <= self.min_stack[-1]:
             self.min_stack.append(x)
         
 
     def pop(self) -> None:
+        '''
+        Time Complexity: O(1)
+        Space Complecity: O(1)
+        '''
         n = self.stack.pop()
         if self.min_stack[-1] == n:
             self.min_stack.pop()
@@ -43,10 +51,18 @@ class MinStack:
         
 
     def top(self) -> int:
+        '''
+        Time Complexity: O(1)
+        Space Complecity: O(1)
+        '''
         return self.stack[-1]
         
 
     def getMin(self) -> int:
+        '''
+        Time Complexity: O(1)
+        Space Complecity: O(1)
+        '''
         return self.min_stack[-1]
         
 
