@@ -19,41 +19,38 @@ nums2 = [3, 4]
 
 The median is (2 + 3)/2 = 2.5
 '''
-class MinStack:
-
-    def __init__(self):
-        """
-        initialize your data structure here.
-        """
-        self.stack = []
-        self.min_stack = []
+class Solution:
+    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        m, n = len(nums1), len(nums2)
+        if m > n:
+            nums1, nums2, m, n = nums2, nums1, n, m
+        if not n:
+            return
         
-
-    def push(self, x: int) -> None:
-        self.stack.append(x)
-        if not self.min_stack or x <= self.min_stack[-1]:
-            self.min_stack.append(x)
-        
-
-    def pop(self) -> None:
-        n = self.stack.pop()
-        if self.min_stack[-1] == n:
-            self.min_stack.pop()
-        return n
-        
-
-    def top(self) -> int:
-        return self.stack[-1]
-        
-
-    def getMin(self) -> int:
-        return self.min_stack[-1]
-        
-
-
-# Your MinStack object will be instantiated and called as such:
-# obj = MinStack()
-# obj.push(x)
-# obj.pop()
-# param_3 = obj.top()
-# param_4 = obj.getMin()
+        imin, imax, half_len = 0, m, (m + n + 1) // 2
+        while imin <= imax:
+            i = (imin + imax) // 2
+            j = half_len - i
+            if i < m and nums2[j - 1] > nums1[i]:
+                imin = i + 1
+            elif i > 0 and nums1[i - 1] > nums2[j]:
+                imax = i - 1
+            else:
+                if not i:
+                    max_left = nums2[j - 1]
+                elif not j:
+                    max_left = nums1[i - 1]
+                else:
+                    max_left = max(nums1[i - 1], nums2[j - 1])
+                    
+                if (m + n) % 2 == 1:
+                    return max_left
+                
+                if i == m:
+                    min_right = nums2[j]
+                elif j == n:
+                    min_right = nums1[i]
+                else:
+                    min_right = min(nums1[i], nums2[j])
+                    
+                return (max_left + min_right) / 2.0
