@@ -25,6 +25,8 @@ Note:
     All elements in nums1 and nums2 are unique.
     The length of both nums1 and nums2 would not exceed 1000.
 '''
+#Time Complexity: O(n)
+#Space Complexity: O(n)
 class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
         d = {}
