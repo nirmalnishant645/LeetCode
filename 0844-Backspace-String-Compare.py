@@ -35,6 +35,8 @@ Follow up:
 
     Can you solve it in O(N) time and O(1) space?
 '''
+# Time Complexity: O(n + m)
+# Space Complexity: O(1)
 class Solution:
     def backspaceCompare(self, S: str, T: str) -> bool:
         backS, upperS, backT, upperT = 0, len(S) - 1, 0, len(T) - 1
