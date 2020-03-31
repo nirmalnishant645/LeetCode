@@ -13,6 +13,8 @@ Example 2:
 Input: "race a car"
 Output: false
 '''
+# Time Complexity: O(n)
+# Space Complexity: O(1)
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         first, last = 0, len(s) - 1
