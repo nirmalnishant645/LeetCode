@@ -27,13 +27,13 @@ Note:
 '''
 class Solution:
     def findAndReplacePattern(self, words: List[str], pattern: str) -> List[str]:
-        def match(word):
+        
+        def find_replace(w):
+            
             d = {}
             
-            for x, y in zip(pattern, word):
-                if d.setdefault(x, y) != y:
-                    return False
-                
-            return len(set(d.values())) == len(d.values())
+            return [d.setdefault(c, len(d)) for c in w]
         
-        return filter(match, words)
+        f_pattern = find_replace(pattern)
+        
+        return [w for w in words if find_replace(w) == f_pattern]
