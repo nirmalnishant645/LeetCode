@@ -40,7 +40,7 @@ class Solution:
     def stringShift(self, s: str, shift: List[List[int]]) -> str:
         direction = 0
         for amount in shift:
-            if amount[0] == 0:
+            if not amount[0]:
                 direction -= amount[1]
             else:
                 direction += amount[1]
