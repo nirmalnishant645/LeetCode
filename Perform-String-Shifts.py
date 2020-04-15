@@ -36,6 +36,7 @@ shift[i].length == 2
 0 <= shift[i][0] <= 1
 0 <= shift[i][1] <= 100
 '''
+# Method 1: Input in the form of string
 class Solution:
     def stringShift(self, s: str, shift: List[List[int]]) -> str:
         direction = 0
@@ -51,3 +52,14 @@ class Solution:
             return s[-direction:] + s[:-direction]
         else:
             return s
+
+# Method 2: Input in the form of list
+class Solution:
+    def stringShift(self, s: str, shift: List[List[int]]) -> str:
+        s_list = [i for i in s] #Changing String to List and carrying out
+        for i in range(len(shift)):
+            if shift[i][0]:
+                s_list = s_list[-(shift[i])[1]:] + s_list[:-(shift[i][1])]
+            else:
+                s_list = s_list[(shift[i][1]):] + s_list[:(shift[i][1])] 
+        return ''.join(s_list)
