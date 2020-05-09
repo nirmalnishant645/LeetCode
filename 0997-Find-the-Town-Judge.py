@@ -11,7 +11,7 @@ You are given trust, an array of pairs trust[i] = [a, b] representing that the p
 
 If the town judge exists and can be identified, return the label of the town judge.  Otherwise, return -1.
 
- 
+
 
 Example 1:
 
@@ -38,7 +38,7 @@ Example 5:
 Input: N = 4, trust = [[1,3],[1,4],[2,3],[2,4],[4,3]]
 Output: 3
 
- 
+
 
 Note:
 
@@ -57,4 +57,4 @@ class Solution:
         for i in range(1, N + 1):
             if degree[i] == N - 1:
                 return i
-        return -1 
+        return -1
