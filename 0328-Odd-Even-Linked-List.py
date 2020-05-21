@@ -25,20 +25,17 @@ Note:
 #         self.val = x
 #         self.next = None
 
-class Solution:
-    def oddEvenList(self, head: ListNode) -> ListNode:
+class Solution(object):
+    def oddEvenList(self, head):
         if not head:
-            return head
-        odd = ListNode(0)
-        even = ListNode(0)
-        odd.next = head
-        even.next = head.next
-        cur1 = odd.next
-        cur2 = even.next
-        while cur1.next and cur2.next:
-            cur1.next, cur2.next = cur1.next.next, cur2.next.next
-            cur1, cur2 = cur1.next, cur2.next
-        cur1.next = even.next
-        return odd.next
-            
-            
+            return
+        odd = head
+        evenHead = head.next
+        even = evenHead
+        while even and even.next:
+            odd.next = even.next
+            even.next = even.next.next
+            odd = odd.next
+            even = even.next
+        odd.next = evenHead
+        return head
