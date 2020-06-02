@@ -15,3 +15,30 @@ return its bottom-up level order traversal as:
   [3]
 ]
 '''
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+# Method 1, Iterative Solution
+
+class Solution:
+    def levelOrderBottom(self, root: TreeNode) -> List[List[int]]:
+        if root is None:
+            return []
+
+        current, res = [root], []
+
+        while current:
+            nex, temp = [], []
+            for n in current:
+                temp.append(n.val)
+                if n.left:
+                    nex.append(n.left)
+                if n.right:
+                    nex.append(n.right)
+            current = nex
+            res.append(temp)
+        return res[::-1]
