@@ -16,3 +16,22 @@ Constraints:
 Both of the given trees will have between 1 and 200 nodes.
 Both of the given trees will have values between 0 and 200
 '''
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+# Method 1, Object
+
+class Solution:
+    def leafSimilar(self, root1: TreeNode, root2: TreeNode) -> bool:
+        return self.leafInorder(root1) == self.leafInorder(root2)
+
+    def leafInorder(self, root):
+        if not root:
+            return []
+        if not root.left and not root.right:
+            return [root.val]
+        return self.leafInorder(root.left) + self.leafInorder(root.right)
