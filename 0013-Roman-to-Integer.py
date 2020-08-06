@@ -51,10 +51,19 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 # Space Complexity: O(1)
 class Solution:
     def romanToInt(self, s: str) -> int:
-        roman = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-        res = prev = 0
-        for i in range(len(s) - 1, -1, -1):
-            cur = roman[s[i]]
-            res = res + cur if cur >= prev else res - cur
-            prev = roman[s[i]]
-        return res
+        
+        symbol_value = {'I' : 1, 'V' : 5, 'X' : 10, 'L' : 50, 'C' : 100, 'D' : 500, 'M' : 1000}
+        
+        result = 0
+        
+        for i in range(len(s)):
+            
+            if i > 0 and symbol_value[s[i]] > symbol_value[s[i - 1]]:
+                
+                result += symbol_value[s[i]] - 2 * (symbol_value[s[i - 1]])
+            
+            else:
+                
+                result += symbol_value[s[i]]
+                
+        return result
