@@ -11,6 +11,7 @@
 - [x] [0012 Integer to Roman](0012-Integer-to-Roman.py)
 - [x] [0013 Roman to Integer](0013-Roman-to-Integer.py)
 - [x] [0020 Valid Parentheses](0020-Valid-Parentheses.py)
+- [x] [0019 Remove Nth Node From End of List](0019-Remove-Nth-Node-From-End-of-List.py)
 - [x] [0021 Merge Two Sorted Lists](0021-Merge-Two-Sorted-Lists.py)
 - [x] [0023 Merge k Sorted Lists](0023-Merge-k-Sorted-Lists.py)
 - [x] [0024 Swap Nodes in Pairs](0024-Swap-Nodes-in-Pairs.py)
