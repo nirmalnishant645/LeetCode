@@ -32,10 +32,13 @@ Notes:
 
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
-        if not headA or not headB:
-            return None
-        curNodeA, curNodeB = headA, headB
-        while curNodeA != curNodeB:
-            curNodeA = headB if not curNodeA else curNodeA.next
-            curNodeB = headA if not curNodeB else curNodeB.next
-        return curNodeA
+        
+        cur_node_a = headA
+        cur_node_b = headB
+        
+        while cur_node_a != cur_node_b:
+            
+            cur_node_a = headB if not cur_node_a else cur_node_a.next
+            cur_node_b = headA if not cur_node_b else cur_node_b.next
+            
+        return cur_node_a
