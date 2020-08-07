@@ -46,6 +46,7 @@
 - [x] [0155 Min Stack](0155-Min-Stack.py)
 - [x] [0160 Intersection of Two Linked Lists](0160-Intersection-of-Two-Linked-List.py)
 - [x] [0169 Majority Element](0169-Majority-Element.py)
+- [x] [0172 Factorial Trailing Zeroes](0172-Factorial-Trailing-Zeroes.py)
 - [x] [0189 Rotate Array](0189-Rotate-Array.py)
 - [x] [0198 House Robber](0198-House-Robber.py)
 - [x] [0203 Remove Linked List Elements](0203-Remove-Linked-List-Elements.py)
