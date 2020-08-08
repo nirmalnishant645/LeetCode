@@ -29,14 +29,19 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         n = len(nums)
-        k = k % n
-        start = count = 0
-        while count < n:
-            cur = start
-            pre = nums[start]
-            while True:
-                nex = (cur + k) % n
-                nums[nex], pre, cur = pre, nums[nex], nex
-                count += 1
-                if start == cur: break
+        k %= n
+        
+        self.reverse(nums, 0, n - 1)
+        self.reverse(nums, 0, k - 1)
+        self.reverse(nums, k, n - 1)
+        
+        return nums
+        
+    def reverse(self, nums, start, end):
+        
+        while start < end:
+            
+            nums[start], nums[end] = nums[end], nums[start]
+            
             start += 1
+            end -= 1
