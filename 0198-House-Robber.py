@@ -36,3 +36,15 @@ class Solution:
             dp[i + 1] = max(dp[i], dp[i - 1] + nums[i])            
             
         return dp[-1]
+
+# Method 2
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        
+        cur_included = max_cur_excluded = 0
+        
+        for cur in nums:
+            
+            cur_included, max_cur_excluded = cur + max_cur_excluded, max(max_cur_excluded, cur_included)
+            
+        return max(cur_included, max_cur_excluded)
