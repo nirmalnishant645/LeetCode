@@ -25,9 +25,20 @@ You may assume both s and t have the same length.
 '''
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
-        S, T = {}, {}
+        
+        d = {}
+        
         for i in range(len(s)):
-            if (s[i] in S and S[s[i]] != t[i]) or (t[i] in T and T[t[i]] != s[i]):
-                return False
-            S[s[i]], T[t[i]] = t[i], s[i]
+            
+            if s[i] in d.keys():
+                if d[s[i]] != t[i]:
+                    return False
+            
+            else:
+                if t[i] in d.values():
+                    return False
+                
+                d[s[i]] = t[i]    
+                
+            
         return True
