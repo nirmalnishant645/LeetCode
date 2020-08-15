@@ -21,17 +21,20 @@ What if the inputs contain unicode characters? How would you adapt your solution
 # Space Complexity: O(1)
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
+        
         if len(s) != len(t):
             return False
         
-        letters = {}
+        check = {}
         
-        for c in s:
-            letters[c] = letters.get(c, 0) + 1
+        for letter in s:
             
-        for c in t:
-            if c not in letters or not letters[c]:
+            check[letter] = check.get(letter, 0) + 1
+                
+        for letter in t:
+            
+            if check.get(letter, 0) <= 0:
                 return False
-            letters[c] -= 1
+            check[letter] -= 1
             
         return True
