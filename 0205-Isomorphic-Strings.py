@@ -26,19 +26,15 @@ You may assume both s and t have the same length.
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
         
-        d = {}
+        table_s = {}
+        table_t = {}
         
         for i in range(len(s)):
             
-            if s[i] in d.keys():
-                if d[s[i]] != t[i]:
-                    return False
-            
-            else:
-                if t[i] in d.values():
-                    return False
+            if (s[i] in table_s and table_s[s[i]] != t[i]) or (t[i] in table_t and table_t[t[i]] != s[i]):
+                return False
                 
-                d[s[i]] = t[i]    
-                
+            table_s[s[i]] = t[i]
+            table_t[t[i]] = s[i]
             
         return True
