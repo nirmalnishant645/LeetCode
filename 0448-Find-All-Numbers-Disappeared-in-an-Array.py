@@ -15,7 +15,9 @@ Output:
 '''
 class Solution:
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
+        
         n = len(nums)
+        
         for idx, val in enumerate(nums):
             nums[(val - 1) % n] += n
         return [idx + 1 for idx, val in enumerate(nums) if val <= n]
