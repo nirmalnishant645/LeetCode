@@ -8,13 +8,20 @@ Note: In the string, each word is separated by single space and there will not b
 '''
 class Solution:
     def reverseWords(self, s: str) -> str:
-        s = s.split()
+        s = list(s)
         
-        for idx, word in enumerate(s):
+        res = word = ""
+        
+        for idx, let in enumerate(s):
             
-            s[idx] = ''.join(self.reverse(list(word)))  
+            if let != " ":
+                word += let
+            else:
+                word = "".join(self.reverse(list(word)))
+                res += word if not res else " "+word
+                word = ""
             
-        return " ".join(s)
+        return res+" "+"".join(self.reverse(list(word))) if res else "".join(self.reverse(list(word)))
             
     def reverse(self, word):
         
