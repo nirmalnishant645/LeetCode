@@ -31,14 +31,14 @@ Note:
 '''
 class Solution:
     def maxDistToClosest(self, seats: List[int]) -> int:
-        dist = 0
-        seat = -1
-        for idx, val in enumerate(seats):
-            if val:
-                if seat < 0:
-                    max_dist = idx
-                else:
-                    dist = (idx - seat) // 2
-                    max_dist = dist if dist > max_dist else max_dist 
-                seat = idx
-        return len(seats) - 1 - seat if (len(seats) - 1 - seat) > max_dist else max_dist
+        
+        last_seen = -1
+        max_dist = 0
+        
+        for i in range(len(seats)):
+            
+            if seats[i]:
+                max_dist = max((i - last_seen) // 2 if last_seen != -1 else i, max_dist)
+                last_seen = i
+        
+        return max(len(seats) - 1 - last_seen if last_seen != -1 else len(seats) - 1, max_dist)
