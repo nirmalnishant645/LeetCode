@@ -110,6 +110,7 @@
 - [x] [0692 Top K Frequent Words](0692-Top-K-Frequent-Words.py)
 - [x] [0700 Search in a Binary Search Tree](0700-Search-in-a-Binary-Search-Tree.py)
 - [x] [0704 Binary Search](0704-Binary-Search.py)
+- [x] [0705 Design Hash Set](0705-Design-HashSet.py)
 - [x] [0707 Design Linked List](0707-Design-Linked_list.py)
 - [x] [0709 To Lower Case](0709-To-Lower-Case.py)
 - [x] [0733 Flood Fill](0733-Flood-Fill.py)
