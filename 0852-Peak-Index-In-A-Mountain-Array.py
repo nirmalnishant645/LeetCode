@@ -21,11 +21,14 @@ A is a mountain, as defined above.
 '''
 class Solution:
     def peakIndexInMountainArray(self, A: List[int]) -> int:
-        lower, upper = 0, len(A) - 1
-        while lower < upper:
-            mid = (lower + upper)//2
+        
+        start, end = 0, len(A) - 1
+        
+        while start < end:
+            mid = (start + end) // 2
+            
             if A[mid] > A[mid + 1]:
-                upper = mid
+                end = mid
             else:
-                lower = mid + 1
-        return upper
+                start = mid + 1
+        return end
