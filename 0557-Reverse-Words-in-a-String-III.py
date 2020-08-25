@@ -7,19 +7,20 @@ Output: "s'teL ekat edoCteeL tsetnoc"
 Note: In the string, each word is separated by single space and there will not be any extra space in the string.
 '''
 class Solution:
-    def reverseWords(self, s: str) -> str:        
-        res = word = ""
+    def reverseWords(self, s: str) -> str:    
+        res = []
+        word = ""
         
-        for let in s:
-            
-            if let != " ":
-                word += let
-            else:
-                word = "".join(self.reverse(list(word)))
-                res += word if not res else " "+word
+        for i, let in enumerate(s):
+            if let == ' ' or i == len(s) - 1:
+                if i == len(s) - 1:
+                    word += let
+                res.append(self.reverse(list(word)))
                 word = ""
+            else:
+                word += let
             
-        return res+" "+"".join(self.reverse(list(word))) if res else "".join(self.reverse(list(word)))
+        return ' '.join(res)
             
     def reverse(self, word):
         
@@ -33,4 +34,4 @@ class Solution:
             start += 1
             end -= 1
             
-        return word
+        return ''.join(word)
