@@ -22,15 +22,17 @@ Explanation: The answer is "wke", with the length of 3.
 '''
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        start = max_len = 0
-        ch = {}
+        left = right = maxx = 0
         
-        for i, c in enumerate(s):
-            if c in ch and start <= ch[c]:
-                start = ch[c] + 1
+        char = set()
+        
+        while right < len(s):
+            if s[right] in char:
+                char.remove(s[left])
+                left += 1
             else:
-                max_len = max(max_len, i - start + 1)
-                
-            ch[c] = i
-            
-        return max_len
+                char.add(s[right])
+                right += 1
+                maxx = max(len(char), maxx)
+        
+        return maxx
