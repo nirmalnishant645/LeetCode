@@ -7,12 +7,10 @@ Output: "s'teL ekat edoCteeL tsetnoc"
 Note: In the string, each word is separated by single space and there will not be any extra space in the string.
 '''
 class Solution:
-    def reverseWords(self, s: str) -> str:
-        s = list(s)
-        
+    def reverseWords(self, s: str) -> str:        
         res = word = ""
         
-        for idx, let in enumerate(s):
+        for let in s:
             
             if let != " ":
                 word += let
