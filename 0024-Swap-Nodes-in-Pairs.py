@@ -11,18 +11,17 @@ Given 1->2->3->4, you should return the list as 2->1->4->3.
 '''
 # Definition for singly-linked list.
 # class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
-
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 class Solution:
     def swapPairs(self, head: ListNode) -> ListNode:
-        prev = ListNode(0)
-        prev.next = head
-        cur_node = prev
-        while cur_node.next and cur_node.next.next:
-            a = cur_node.next
-            b = a.next
-            cur_node.next, a.next, b.next = b, b.next, a
-            cur_node = a
-        return prev.next
+        temp = ListNode()
+        temp.next = head
+        cur = temp
+        
+        while cur.next and cur.next.next:
+            cur.next.next, cur.next, cur.next.next = cur.next.next.next, cur.next.next, cur.next
+            cur = cur.next.next
+        
+        return temp.next
