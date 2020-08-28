@@ -20,6 +20,7 @@
 - [x] [0024 Swap Nodes in Pairs](0024-Swap-Nodes-in-Pairs.py)
 - [x] [0026 Remove Duplicates from Sorted Array](0026-Remove-Duplicates-from-Sorted-Array.py)
 - [x] [0027 Remove Element](0027-Remove-Element.py)
+- [x] [0029 Divide Two Integers](0029-Divide-Two_integers.py)
 - [x] [0031 Next Permutation](0031-Next-Permutation.py)
 - [x] [0033 Search in Rotated Sorted Array](0033-Search-in-Rotated-Sorted-Array.py)
 - [x] [0035 Search Insert Position](0035-Search-Insert-Position.py)
