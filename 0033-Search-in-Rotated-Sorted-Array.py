@@ -22,24 +22,34 @@ Output: -1
 #Method NN
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        lower, upper = 0, len(nums)-1
-        while lower <= upper:
-            flag, mid = 1, (lower+upper)//2
-            if nums[mid] == target:
-                return mid
-            elif nums[lower] <= nums[mid]:
-                if flag and nums[lower] <= target < nums[mid]:
-                    upper = mid - 1
-                    flag = 0
-                    continue
+        if not nums:
+            return -1
+        
+        lower, upper = 0, len(nums) - 1
+        
+        while lower < upper:
+            mid = (lower + upper) // 2
+            if nums[mid] > nums[upper]:
                 lower = mid + 1
             else:
-                if flag and nums[mid] < target <= nums[upper]:
-                    lower = mid + 1 
-                    flag = 0
-                    continue
+                upper = mid
+                
+        if nums[lower] <= target <= nums[-1]:
+            return self.binary_search(nums, lower, len(nums) - 1, target)
+        else:
+            return self.binary_search(nums, 0, lower - 1, target)
+        
+    def binary_search(self, nums, lower, upper, target):
+        
+        while lower <= upper:
+            mid = (lower + upper) // 2
+            if nums[mid] == target:
+                return mid
+            elif nums[mid] > target:
                 upper = mid - 1
-        return -1
+            else:
+                lower = mid + 1
+        return - 1
     
 #Method AK
 class Solution(object):
