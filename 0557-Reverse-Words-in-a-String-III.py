@@ -8,24 +8,19 @@ Note: In the string, each word is separated by single space and there will not b
 '''
 class Solution:
     def reverseWords(self, s: str) -> str:    
-        res = []
-        word = ""
+        s = list(s)
+        start = 0
         
         for i, let in enumerate(s):
-            if let == ' ' or i == len(s) - 1:
-                if i == len(s) - 1:
-                    word += let
-                res.append(self.reverse(list(word)))
-                word = ""
-            else:
-                word += let
+            if let == ' ':
+                self.reverse(s, start, i - 1)
+                start = i + 1
+            if i == len(s) - 1:
+                self.reverse(s, start, i)
             
-        return ' '.join(res)
+        return ''.join(s)
             
-    def reverse(self, word):
-        
-        start = 0
-        end = len(word) - 1;
+    def reverse(self, word, start, end):
         
         while start < end:
             
@@ -33,5 +28,3 @@ class Solution:
             
             start += 1
             end -= 1
-            
-        return ''.join(word)
