@@ -21,7 +21,6 @@
 - [x] [0033 Search in Rotated Sorted Array](0033-Search-in-Rotated-Sorted-Array.py)
 - [x] [0035 Search Insert Position](0035-Search-Insert-Position.py)
 - [x] [0038 Count and Say](0038-Count-and-Say.py)
-- [x] [0046 Permutations](0046-Permutations.py)
 - [x] [0053 Maximum Subarray](0053-Maximum-Subarray.py)
 - [x] [0055 Jump Game](0055-Jump-Game.py)
 - [x] [0056 Merge Intervals](0056-Merge-Intervals.py)
