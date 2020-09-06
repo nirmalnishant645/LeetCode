@@ -27,6 +27,7 @@
 - [x] [0038 Count and Say](0038-Count-and-Say.py)
 - [x] [0046 Permutations](0046-Permutations.py)
 - [x] [0048 Rotate Image](0048-Rotate-Image.py)
+- [x] [0049 Group Anagrams](0049-Group-Anagrams.py)
 - [x] [0053 Maximum Subarray](0053-Maximum-Subarray.py)
 - [x] [0055 Jump Game](0055-Jump-Game.py)
 - [x] [0056 Merge Intervals](0056-Merge-Intervals.py)
