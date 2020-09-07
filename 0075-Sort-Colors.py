@@ -20,15 +20,17 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        start,end = 0,len(nums)-1
-        index = 0
-        while start <= end:
-            while nums[end] == 2 and end >= 0:
-                end -= 1
-            if nums[start] == 2 and start <= end:
-                nums[start], nums[end] = nums[end], nums[start]
-                end -= 1
-            if nums[start] == 0:
-                nums[start], nums[index] = nums[index], nums[start]
+        if not nums:
+            return
+        index, start, end = 0, 0, len(nums) - 1
+        
+        while index <= end and start < end:
+            if nums[index] == 0:
+                nums[index], nums[start] = nums[start], nums[index]
                 index += 1
-            start += 1
+                start += 1
+            elif nums[index] == 2:
+                nums[index], nums[end] = nums[end], nums[index]
+                end -= 1
+            else:
+                index += 1
