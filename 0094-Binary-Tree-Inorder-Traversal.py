@@ -56,3 +56,23 @@ class Solution:
         self.recursive(root.left, res)
         res.append(root.val)
         self.recursive(root.right, res)
+
+# Iterative Solution
+
+class Solution:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        res = []
+        if not root:
+            return res
+        stack = []
+        node = root
+        while node or stack:
+            if node:
+                stack.append(node)
+                node = node.left
+            else:
+                new_node = stack.pop()
+                res.append(new_node.val)
+                node = new_node.right
+            
+        return res
