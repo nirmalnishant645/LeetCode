@@ -40,6 +40,7 @@
 - [x] [0075 Sort Colors](0075-Sort-Colors.py)
 - [x] [0088 Merge Sorted Array](0088-Merge-Sorted-Array.py)
 - [x] [0091 Decode Ways](0091-Decode-Ways.py)
+- [x] [0094 Binary Tree Inorder Traversal](0094-Binary-Tree-Inorder-Traversal.py)
 - [x] [0100 Same Tree](0100-Same-Tree.py)
 - [x] [0107 Binary Tree Level Order Traversal II](0107-Binary-Tree-Level-Order-Traversal-II.py)
 - [x] [0118 Pascal's Triangle](0118-Pascal-Triangle.py)
