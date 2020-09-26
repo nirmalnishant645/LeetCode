@@ -59,3 +59,20 @@ class Solution:
         self.recursive(root.left, res)
         self.recursive(root.right, res)
         res.append(root.val)
+
+# Iterative
+
+class Solution:
+    def postorderTraversal(self, root: TreeNode) -> List[int]:
+        res = []
+        stack = [(root, False)]
+        while stack:
+            node, visited = stack.pop()
+            if node and visited:
+                res.append(node.val)
+            elif node:
+                stack.append((node, True))
+                stack.append((node.right, False))
+                stack.append((node.left, False))
+                
+        return res
