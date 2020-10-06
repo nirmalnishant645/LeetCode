@@ -60,7 +60,7 @@ class Solution:
         self.recursive(root.right, res)
         res.append(root.val)
 
-# Iterative
+# Iterative 1
 
 class Solution:
     def postorderTraversal(self, root: TreeNode) -> List[int]:
@@ -75,4 +75,23 @@ class Solution:
                 stack.append((node.right, False))
                 stack.append((node.left, False))
                 
+        return res
+       
+# Iterative 2
+
+class Solution:
+    def postorderTraversal(self, root: TreeNode) -> List[int]:
+        res = []
+        stack = []
+        
+        while root or stack:
+            if root:
+                stack.append(root)
+                root = root.left
+            elif stack[-1].right:
+                root = stack[-1].right
+                stack[-1].right = None
+            else:
+                res.append(stack.pop().val)
+            
         return res
