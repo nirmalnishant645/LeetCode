@@ -49,16 +49,16 @@ Recursive solution is trivial, could you do it iteratively?
 
 class Solution:
     def postorderTraversal(self, root: TreeNode) -> List[int]:
-        res = []
-        self.recursive(root, res)
-        return res
+        self.res = []
+        self.recursive(root)
+        return self.res
     
-    def recursive(self, root, res):
+    def recursive(self, root):
         if not root:
             return
-        self.recursive(root.left, res)
-        self.recursive(root.right, res)
-        res.append(root.val)
+        self.recursive(root.left)
+        self.recursive(root.right)
+        self.res.append(root.val)
 
 # Iterative 1
 
@@ -83,15 +83,22 @@ class Solution:
     def postorderTraversal(self, root: TreeNode) -> List[int]:
         res = []
         stack = []
+        cur = root
         
-        while root or stack:
-            if root:
-                stack.append(root)
-                root = root.left
-            elif stack[-1].right:
-                root = stack[-1].right
-                stack[-1].right = None
+        while stack or cur:
+            if cur:
+                stack.append(cur)
+                cur = cur.left
             else:
-                res.append(stack.pop().val)
-            
+                node = stack[-1].right
+                if not node:
+                    node = stack.pop()
+                    res.append(node.val)
+                    
+                    while stack and stack[-1].right == node:
+                        node = stack.pop()
+                        res.append(node.val)
+                else:
+                    cur = node
+                         
         return res
