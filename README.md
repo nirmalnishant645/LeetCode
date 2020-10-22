@@ -42,6 +42,7 @@
 - [x] [0091 Decode Ways](0091-Decode-Ways.py)
 - [x] [0094 Binary Tree Inorder Traversal](0094-Binary-Tree-Inorder-Traversal.py)
 - [x] [0100 Same Tree](0100-Same-Tree.py)
+- [x] [0102 Binary Tree Level Order Traversal](0102-Binary-Tree-Level-Order-Traversal.py)
 - [x] [0107 Binary Tree Level Order Traversal II](0107-Binary-Tree-Level-Order-Traversal-II.py)
 - [x] [0118 Pascal's Triangle](0118-Pascal-Triangle.py)
 - [x] [0121 Best Time to Buy and Sell Stock](0121-Best-Time-To-Buy-and-Sell-Stock.py)
