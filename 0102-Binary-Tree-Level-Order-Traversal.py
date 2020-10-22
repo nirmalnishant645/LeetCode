@@ -17,17 +17,18 @@ return its level order traversal as:
 '''
 class Solution:
     def levelOrder(self, root: TreeNode) -> List[List[int]]:
-        if root is None:
+        if not root:
             return root
         queue, res = [root], []
-        while len(queue) > 0:
-            temp = []
-            for _ in range(len(queue)):
-                node = queue.pop(0)
-                temp.append(node.val)
-                if node.left != None:
-                    queue.append(node.left)
-                if node.right != None:
-                    queue.append(node.right)
-            res.append(temp)
+        while queue:
+            cur, value = [], []
+            for node in queue:
+                value.append(node.val)
+                if node.left:
+                    cur.append(node.left)
+                if node.right:
+                    cur.append(node.right)
+            queue = cur
+            res.append(value)
+            
         return res
