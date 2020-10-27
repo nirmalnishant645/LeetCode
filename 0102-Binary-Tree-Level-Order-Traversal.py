@@ -21,14 +21,15 @@ class Solution:
             return root
         queue, res = [root], []
         while queue:
-            cur, value = [], []
+            next_level, value = [], []
             for node in queue:
                 value.append(node.val)
                 if node.left:
-                    cur.append(node.left)
+                    next_level.append(node.left)
                 if node.right:
-                    cur.append(node.right)
-            queue = cur
+                    next_level.append(node.right)
+            queue = next_level
             res.append(value)
             
         return res
+    
