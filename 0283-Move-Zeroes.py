@@ -11,6 +11,9 @@ Note:
 You must do this in-place without making a copy of the array.
 Minimize the total number of operations.
 '''
+
+from typing import List
+
 class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
         """
@@ -21,6 +24,7 @@ class Solution:
             if nums[i]:
                 nums[i], nums[zero] = nums[zero], nums[i]
                 zero += 1
+        print(nums)
 
 class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
@@ -31,3 +35,8 @@ class Solution:
                 non_zero += 1
         for i in range(non_zero, len(nums)):
             nums[i] = 0
+        print(nums)
+
+# Checking with Custom Input
+s = Solution()
+s.moveZeroes([0, 2, 0, 1, 4]) # [2, 1, 4, 0, 0]
