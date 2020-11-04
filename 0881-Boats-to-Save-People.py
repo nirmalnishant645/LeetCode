@@ -25,6 +25,8 @@ Constraints:
 1 <= people[i] <= limit <= 3 * 104
 '''
 
+from typing import List
+
 # Two Pointers Method
 
 class Solution:
@@ -42,3 +44,7 @@ class Solution:
             right -= 1
                             
         return boat
+
+s = Solution()
+answer = s.numRescueBoats([2, 1, 3, 4], 4) # 3
+print(answer)
