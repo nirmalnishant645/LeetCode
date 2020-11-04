@@ -45,6 +45,22 @@ class Solution:
                             
         return boat
 
+# Negligibly Better Solution, same method
+
+class Solution:
+    def numRescueBoats(self, people: List[int], limit: int) -> int:
+        people.sort()
+        left, right, boat = 0, len(people) - 1, 0
+        while left <= right:
+            boat += 1
+            if left == right:
+                break
+            if people[left] + people[right] <= limit:
+                left += 1
+            right -= 1
+                            
+        return boat
+
 s = Solution()
 answer = s.numRescueBoats([2, 1, 3, 4], 4) # 3
 print(answer)
