@@ -36,11 +36,9 @@ class Solution:
                 boat += 1
                 break
             if people[left] + people[right] <= limit:
-                boat += 1
                 left += 1
-                right -= 1
-            else:
-                boat += 1
-                right -= 1
+            
+            boat += 1
+            right -= 1
                             
         return boat
