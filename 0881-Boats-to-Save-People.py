@@ -24,3 +24,23 @@ Constraints:
 1 <= people.length <= 5 * 104
 1 <= people[i] <= limit <= 3 * 104
 '''
+
+# Two Pointers Method
+
+class Solution:
+    def numRescueBoats(self, people: List[int], limit: int) -> int:
+        people.sort()
+        left, right, boat = 0, len(people) - 1, 0
+        while left <= right:
+            if left == right:
+                boat += 1
+                break
+            if people[left] + people[right] <= limit:
+                boat += 1
+                left += 1
+                right -= 1
+            else:
+                boat += 1
+                right -= 1
+                            
+        return boat
