@@ -40,3 +40,8 @@ class Solution:
             i += 1
         return i == len(arr)
 
+s = Solution()
+answer = s.validMountainArray([1, 2, 3, 2, 1]) # True
+print(answer)
+answer = s.validMountainArray([1, 2, 2, 4, 1, 5]) # False
+print(answer)
