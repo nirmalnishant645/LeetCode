@@ -10,17 +10,19 @@ Example:
 Input: [1,8,6,2,5,4,8,3,7]
 Output: 49
 '''
+
+from typing import List
+
+# Two Pointers
+
 class Solution:
     def maxArea(self, height: List[int]) -> int:
-        start = max_area = 0
-        end = len(height) - 1
-        
+        start, end, max_area = 0, len(height) - 1 , 0
         while start < end:
+            max_area = max((end - start) * min(height[start], height[end]), max_area)
             if height[start] < height[end]:
-                max_area = max(max_area, (end - start) * height[start])
                 start += 1
             else:
-                max_area = max(max_area, (end - start) * height[end])
                 end -= 1
-                
         return max_area
+
