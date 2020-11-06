@@ -26,3 +26,8 @@ class Solution:
                 end -= 1
         return max_area
 
+# Custom Input Check
+
+s = Solution()
+answer = s.maxArea([2, 1, 1, 2]) # 6
+print(answer)
