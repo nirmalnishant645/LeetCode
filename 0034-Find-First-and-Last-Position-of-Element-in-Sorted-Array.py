@@ -24,3 +24,40 @@ nums is a non-decreasing array.
 -109 <= target <= 109
 '''
 
+from typing import List
+
+# Simple Binary Search
+
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        
+        left, right = 0, len(nums) - 1
+        while left <= right:
+            mid = (left + right) // 2
+            if nums[mid] == target:
+                if mid == 0 or nums[mid - 1] != target:
+                    first = mid
+                    break
+                right = mid - 1
+            elif nums[mid] > target:
+                right = mid - 1
+            else:
+                left = mid + 1
+                
+        if left > right:
+            return [-1, -1]
+                
+        left, right = 0, len(nums) - 1
+        while left <= right:
+            mid = (left + right) // 2
+            if nums[mid] == target:
+                if mid == len(nums) - 1 or nums[mid + 1] != target:
+                    last = mid
+                    break
+                left = mid + 1
+            elif nums[mid] > target:
+                right = mid - 1
+            else:
+                left = mid + 1
+                
+        return [first, last]
