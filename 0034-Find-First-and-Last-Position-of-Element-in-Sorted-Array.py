@@ -120,3 +120,9 @@ class Solution:
             return [-1, -1]
         else:
             return [start, self.binarySearch(nums, target, False)]
+
+# Custom Input Check
+
+s = Solution()
+answer = s.searchRange([1, 2, 2, 3, 4, 4, 4, 4]) # [4,7]
+print(answer)
