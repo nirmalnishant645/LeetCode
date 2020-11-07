@@ -99,3 +99,24 @@ class Solution:
         last = self.getLastOccurence(nums, target)
         
         return [first, last]
+
+# Simple Binary Search with only one Function
+
+class Solution:
+    
+    def binarySearch(self, nums, target, flag):
+        low, high = 0, len(nums) - 1
+        while low <= high:
+            mid = (low + high) // 2
+            if nums[mid] > target or (nums[mid] == target and flag):
+                high = mid - 1
+            else:
+                low = mid + 1
+        return low if flag else high
+    
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        start = self.binarySearch(nums, target, True)
+        if start == len(nums) or nums[start] != target:
+            return [-1, -1]
+        else:
+            return [start, self.binarySearch(nums, target, False)]
