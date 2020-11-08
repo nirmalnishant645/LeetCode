@@ -21,6 +21,9 @@ Then 4 is the first bad version.
 # @return an integer
 # def isBadVersion(version):
 
+def isBadVersion(version):
+    return version >= 3 # First Bad Version
+
 class Solution:
 
     def firstBadVersion(self, n):
@@ -37,3 +40,7 @@ class Solution:
                 low = mid + 1
                 
         return high
+
+s = Solution()
+answer = s.firstBadVersion(10) # 3
+print(answer)
