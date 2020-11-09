@@ -13,6 +13,8 @@ Note:
 Your algorithm should run in linear runtime complexity. Could you implement it using only constant extra space complexity?
 '''
 
+from typing import List
+
 # Using Bit Manipulation
 
 class Solution:
@@ -23,3 +25,9 @@ class Solution:
             if i < len(nums):
                 res ^= nums[i]
         return res
+
+# Check Custom Input
+
+s = Solution()
+answer = s.missingNumber([0, 3, 1, 2, 5]) # 4
+print(answer)
