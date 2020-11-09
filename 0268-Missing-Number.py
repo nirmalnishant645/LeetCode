@@ -12,6 +12,9 @@ Output: 8
 Note:
 Your algorithm should run in linear runtime complexity. Could you implement it using only constant extra space complexity?
 '''
+
+# Using Bit Manipulation
+
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
         res = 0
