@@ -36,6 +36,14 @@ class Solution:
                 res ^= nums[i]
         return res
 
+# Using Math Formula and in-built sum function
+
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        current_sum = sum(nums)
+        intended_sum = len(nums) * (len(nums) + 1) // 2
+        return intended_sum - current_sum
+
 # Check Custom Input
 
 s = Solution()
