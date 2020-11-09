@@ -15,6 +15,16 @@ Your algorithm should run in linear runtime complexity. Could you implement it u
 
 from typing import List
 
+# Using Math Formula to find sum
+
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        n = len(nums)
+        total = n*(n+1)//2
+        for n in nums:
+            total -= n
+        return total
+
 # Using Bit Manipulation
 
 class Solution:
