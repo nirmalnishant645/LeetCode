@@ -61,3 +61,9 @@ class Solution:
                 for multiples in range(i*i, n, i):
                     isPrime[multiples] = False
         return sum(isPrime)
+
+# Check Custom Input
+
+s = Solution()
+answer = s.countPrimes(12) # (2, 3, 5, 7, 11) => 5
+print(answer)
