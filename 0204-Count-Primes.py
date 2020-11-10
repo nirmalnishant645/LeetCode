@@ -26,3 +26,22 @@ class Solution:
                         primes[j] = False
                         
         return sum(primes)
+
+
+# Sieve of Eratosthenes Algorithm and While Loop
+
+class Solution:
+    def countPrimes(self, n: int) -> int:
+        if n < 2:
+            return 0
+        isPrime = [True for i in range(n)]
+        isPrime[0] = isPrime[1] = False
+        i = 2
+        while n > i*i:
+            if isPrime[i]:
+                j = 2
+                while i * j < n:
+                    isPrime[i*j] = False
+                    j += 1
+            i += 1
+        return sum(isPrime)
