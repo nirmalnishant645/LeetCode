@@ -7,6 +7,9 @@ Input: 10
 Output: 4
 Explanation: There are 4 prime numbers less than 10, they are 2, 3, 5, 7.
 '''
+
+# Sieve of Eratosthenes Algorithm and For Loop
+
 class Solution:
     def countPrimes(self, n: int) -> int:
         
