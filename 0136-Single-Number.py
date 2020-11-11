@@ -47,6 +47,23 @@ class Solution:
     def singleNumber(self, nums: List[int]) -> int:
         return 2*(sum(set(nums))) - sum(nums)
 
+# Hash Table
+
+# Time Complexity: O(n)
+# Space Complexity: O(n)
+
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        unique = {}
+        for num in nums:
+            if num in unique:
+                unique[num] += 1
+            else:
+                unique[num] = 1
+        for key, value in unique.items():
+            if value == 1:
+                return key
+
 # Check Custom Input
 
 s = Solution()
