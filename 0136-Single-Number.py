@@ -41,6 +41,12 @@ class Solution:
             unique.add(num)
         return (2 * sum(unique)) - sum(nums)
 
+# Hash Set One Liner
+
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        return 2*(sum(set(nums))) - sum(nums)
+
 # Check Custom Input
 
 s = Solution()
