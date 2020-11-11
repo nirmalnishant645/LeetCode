@@ -15,6 +15,8 @@ Input: [4,1,2,1,2]
 Output: 4
 '''
 
+from typing import List
+
 # Bit Manipulation
 
 # Time Complexity: O(n)
@@ -26,3 +28,9 @@ class Solution:
         for num in nums:
             res ^= num
         return res
+
+# Check Custom Input
+
+s = Solution()
+answer = s.singleNumber([3, 3, 2, 2, 1]) # 1
+print(answer)
