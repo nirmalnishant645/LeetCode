@@ -29,6 +29,18 @@ class Solution:
             res ^= num
         return res
 
+# Hash Set
+
+# Time Complexity: O(n)
+# Space Complexity: O(n)
+
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        unique = set()
+        for num in nums:
+            unique.add(num)
+        return (2 * sum(unique)) - sum(nums)
+
 # Check Custom Input
 
 s = Solution()
