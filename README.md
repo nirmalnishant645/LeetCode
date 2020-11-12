@@ -53,7 +53,7 @@
 - [x] [0141 Linked List Cycle](0141-Linked-List-Cycle.py)
 - [x] [0143 Reorder List](0143-Reorder-List.py)
 - [x] [0144 Binary Tree Preorder Traversal](0144-Binary-Tree-Preorder-Traversal.py)
--[x] [0145 Binary Tree Postorder Traverlsal](0145-Binary-Tree-Postorder-Traversal.py)
+- [x] [0145 Binary Tree Postorder Traverlsal](0145-Binary-Tree-Postorder-Traversal.py)
 - [x] [0151 Reverse Words in a String](0151-Reverse-Words-in-a-String.py)
 - [x] [0152 Maximum Product Subarray](0152-Maximum-Product-Subarray.py)
 - [x] [0155 Min Stack](0155-Min-Stack.py)
