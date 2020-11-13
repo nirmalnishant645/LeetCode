@@ -23,6 +23,7 @@
 - [x] [0029 Divide Two Integers](0029-Divide-Two_integers.py)
 - [x] [0031 Next Permutation](0031-Next-Permutation.py)
 - [x] [0033 Search in Rotated Sorted Array](0033-Search-in-Rotated-Sorted-Array.py)
+- [x] [0034 Find First and Last Position of Element in Sorted Array](0034-Find-First-and-Last-Position-of-Element-in-Sorted-Array.py)
 - [x] [0035 Search Insert Position](0035-Search-Insert-Position.py)
 - [x] [0038 Count and Say](0038-Count-and-Say.py)
 - [x] [0046 Permutations](0046-Permutations.py)
