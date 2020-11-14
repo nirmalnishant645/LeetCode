@@ -95,6 +95,7 @@
 - [x] [0350 Intersection of Two Arrays II](0350-Intersection-of-Two-Arrays-II.py)
 - [x] [0367 Valid Perfect Square](0367-Valid-Perfect-Square.py)
 - [x] [0371 Sum of Two Integers](0371-Sum-of-Two-Integers.py)
+- [x] [0373 Find K Pairs with Smallers Sums](0373-Find-K-Pairs-with-Smallest-Sums.py)
 - [x] [0383 Ransom Note](0383-Ransom-Note.py)
 - [x] [0385 Mini Parser](0385-Mini-Parser.py)
 - [x] [0387 First Unique Character in a String](0387-First-Unique-Characcter-in-a-String.py)
