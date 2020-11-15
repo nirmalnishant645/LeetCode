@@ -135,6 +135,7 @@
 - [x] [0856 Score of Parentheses](0856-Score-of-Parentheses.py)
 - [x] [0872 Leaf-Similar Trees](0872-Leaf-Similar-Trees.py)
 - [x] [0876 Middle of the Linked List](0876-Middle-of-the-Linked-List.py)
+- [x] [0881 Boats to Save People](0881-Boats-to-Save-People.py)
 - [x] [0890 Find and Replace Pattern](0890-Find-and-Replace-Pattern.py)
 - [x] [0961 N-Repeated Element in Size 2N Array](0961-N-Repeated-Element-in-Size-2N-Array.py)
 - [x] [0981 Time Based Key-Value Store](0981-Time-Based-Key-Value-Store.py)
