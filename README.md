@@ -137,6 +137,7 @@
 - [x] [0876 Middle of the Linked List](0876-Middle-of-the-Linked-List.py)
 - [x] [0881 Boats to Save People](0881-Boats-to-Save-People.py)
 - [x] [0890 Find and Replace Pattern](0890-Find-and-Replace-Pattern.py)
+- [x] [0941 Valid Mountain Array](0890-Find-and-Replace-Pattern.py)
 - [x] [0961 N-Repeated Element in Size 2N Array](0961-N-Repeated-Element-in-Size-2N-Array.py)
 - [x] [0981 Time Based Key-Value Store](0981-Time-Based-Key-Value-Store.py)
 - [x] [0993 Cousins in Binary Tree](0993-Cousins-in-Binary-Tree.py)
