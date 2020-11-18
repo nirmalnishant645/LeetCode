@@ -34,4 +34,3 @@ class Solution:
                 n = summ
                 
         return True
-                
