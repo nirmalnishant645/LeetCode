@@ -17,11 +17,34 @@ Output: 12
 Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1).
              Total amount you can rob = 2 + 9 + 1 = 12.
 '''
+
+# Method 1 (Dynamic Programming)
 class Solution:
     def rob(self, nums: List[int]) -> int:
-        first = second = 0
-        for money in nums:
-            temp = first
-            first = second +  money if second + money > first else first
-            second = temp
-        return first
+        
+        if not nums:
+            
+            return 0
+        
+        dp = [None] * (len(nums) + 1)
+        
+        dp[0] = 0
+        dp[1] = nums[0]
+        
+        for i in range(1, len(nums)):
+            
+            dp[i + 1] = max(dp[i], dp[i - 1] + nums[i])            
+            
+        return dp[-1]
+
+# Method 2
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        
+        cur_included = max_cur_excluded = 0
+        
+        for cur in nums:
+            
+            cur_included, max_cur_excluded = cur + max_cur_excluded, max(max_cur_excluded, cur_included)
+            
+        return max(cur_included, max_cur_excluded)

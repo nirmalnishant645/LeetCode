@@ -57,6 +57,8 @@ Note:
     All characters have an ASCII value in [35, 126].
     1 <= len(chars) <= 1000.
 '''
+# Time Complexity: O(n)
+# Space Complexity: O(1)
 class Solution:
     def compress(self, chars: List[str]) -> int:
         index = i = 0
