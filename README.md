@@ -158,6 +158,7 @@
 - [x] [1356 Sort Integers by The Number of 1 Bits](1356-Sort-Integers-by-The-Number-of-1-Bits.py)
 - [x] [1360 Number of Days Between Two Dates](1360-Number-of-Days-Between-Two-Days.py)
 - [x] [1362 Closest Divisors](1362-Closest-Divisors.py)
+- [x] [1366 Rank Team by Votes](1366-Rank-Teams-by-Votes.py)
 - [x] [1370 Increasing Decreasing String](1370-Increasing-Decreasing-String.py)
 - [x] [1374 Generate a String With Characters That Have Odd Counts](1374-Generate-a-String-With-Characters-That-Have-Odd-Counts.py)
 - [x] [1380 Lucky Numbers in a Matrix](1380-Lucky-Numbers-in-a-Matrix.py)
