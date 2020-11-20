@@ -47,3 +47,9 @@ class Solution:
             if move == 'D':
                 y -= 1
         return x == 0 and y == 0
+
+# Check Custom Input
+
+s = Solution()
+answer = s.judgeCircle('LDRRLRUULRDL') # True
+print(answer)
