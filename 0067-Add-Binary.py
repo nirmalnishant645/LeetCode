@@ -12,6 +12,9 @@ Example 2:
 Input: a = "1010", b = "1011"
 Output: "10101"
 '''
+
+# Method 1
+
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
         i, j, carry = len(a) - 1, len(b) - 1, '0'
@@ -29,6 +32,5 @@ class Solution:
 
             i -= 1 
             j -= 1 
-
 
         return ''.join(res[::-1])
