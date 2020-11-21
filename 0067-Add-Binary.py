@@ -52,3 +52,8 @@ class Solution:
             carry = total//2
             
         return ''.join(result[::-1])
+
+# Check Custom Input
+s = Solution()
+answer = s.addBinary('101010', '1111111')
+print(answer)
