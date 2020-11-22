@@ -10,6 +10,8 @@ Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 '''
 
+from typing import List
+
 # Using Hash Tables
 
 class Solution:
@@ -20,3 +22,9 @@ class Solution:
             if temp in dict:
                 return [dict[temp], i]
             dict.update({nums[i] : i})
+
+# Check Custom Input
+
+s = Solution()
+answer = s.twoSum([3,2,1,5], 8) # [0,3]
+print(answer)
