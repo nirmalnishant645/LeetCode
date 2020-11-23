@@ -16,6 +16,8 @@ Input: [1,1,1,3,3,4,3,2,4,2]
 Output: true
 '''
 
+from typing import List
+
 # Using Hash Set
 
 class Solution:
@@ -26,3 +28,9 @@ class Solution:
                 return True
             s.add(num)
         return False
+
+# Check Custom Input
+
+s = Solution()
+answer = s.containsDuplicate([2, 2, 1, 3]) # True
+print(answer)
