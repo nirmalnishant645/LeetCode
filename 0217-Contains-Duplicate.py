@@ -15,11 +15,14 @@ Example 3:
 Input: [1,1,1,3,3,4,3,2,4,2]
 Output: true
 '''
+
+# Using Hash Set
+
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        num = set()
-        for i in nums:
-            if i in num:
+        s = set()
+        for num in nums:
+            if num in s:
                 return True
-            num.add(i)
+            s.add(num)
         return False
