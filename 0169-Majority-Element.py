@@ -11,19 +11,18 @@ Example 2:
 Input: [2,2,1,1,1,2,2]
 Output: 2
 '''
+
+# O(1) Space Complexity Solution 1
+
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        
-        res = nums[0]
-        count = 1
-        
-        for i in range(1, len(nums)):
-            
-            count += 1 if nums[i] == res else -1
-            
-            if not count:
-                
-                res = nums[i]
+        n = count = 0
+        for num in nums:
+            if num == n:
                 count += 1
-                
-        return res
+            elif not count:
+                n = num
+                count += 1
+            else:
+                count -= 1
+        return n
