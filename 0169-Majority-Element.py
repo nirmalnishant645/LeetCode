@@ -29,6 +29,18 @@ class Solution:
                 count -= 1
         return n
 
+# O(1) Space Complexity Solution 2
+
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        res, count = nums[0], 1
+        for i in range(1, len(nums)):
+            count += 1 if nums[i] == res else -1
+            if not count:
+                res = nums[i]
+                count += 1
+        return res
+
 # Custom Input Check
 
 s = Solution()
