@@ -12,6 +12,8 @@ Input: [2,2,1,1,1,2,2]
 Output: 2
 '''
 
+from typing import List
+
 # O(1) Space Complexity Solution 1
 
 class Solution:
@@ -26,3 +28,9 @@ class Solution:
             else:
                 count -= 1
         return n
+
+# Custom Input Check
+
+s = Solution()
+answer = s.majorityElement([1, 1, 1, 5]) # 1
+print(answer)
