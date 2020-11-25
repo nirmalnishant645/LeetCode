@@ -26,6 +26,8 @@ Constraints:
 strs[i] consists of lower-case English letters.
 '''
 
+from typing import List
+
 # Using Hash Table without sorting
 
 class Solution:
@@ -41,3 +43,9 @@ class Solution:
             else:
                 d[key] = [s]
         return d.values()
+
+# Custom Input Check
+
+s = Solution()
+answer = s.findHash(["tan","ant","act","cat"]) # [["tan","ant"],["act","cat"]]
+print(answer)
