@@ -25,17 +25,19 @@ Constraints:
 0 <= strs[i].length <= 100
 strs[i] consists of lower-case English letters.
 '''
+
+# Using Hash Table without sorting
+
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        res = {}
+        d = {}
         for s in strs:
             key = [0] * 26
             for c in s:
                 key[ord(c) - ord('a')] += 1
             key = tuple(key)
-            if key in res:
-                res[key] += [s]
+            if key in d:
+                d[key].append(s)
             else:
-                res[key] = [s]
-                
-        return res.values()
+                d[key] = [s]
+        return d.values()
