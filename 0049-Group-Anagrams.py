@@ -61,6 +61,23 @@ class Solution:
             result.append(value)
         return result
 
+# Using function to find Hash in Hash Table
+
+class Solution:
+    
+    def findHash(self, s):
+        return ''.join(sorted(s))
+    
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        d = {}
+        for s in strs:
+            key = self.findHash(s)
+            if key in d:
+                d[key].append(s)
+            else:
+                d[key] = [s]
+        return d.values()
+
 # Custom Input Check
 
 s = Solution()
