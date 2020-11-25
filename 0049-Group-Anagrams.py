@@ -44,6 +44,23 @@ class Solution:
                 d[key] = [s]
         return d.values()
 
+# Using Sorting and Hash Table 
+
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        d= {}
+        for s in strs:
+            key = sorted(s)
+            key = ''.join(key)
+            if key in d:
+                d[key].append(s)
+            else:
+                d[key] = [s]
+        result = []
+        for key, value in d.items():
+            result.append(value)
+        return result
+
 # Custom Input Check
 
 s = Solution()
