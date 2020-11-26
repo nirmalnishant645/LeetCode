@@ -8,10 +8,11 @@ Output: 1->1->2->3->4->4
 '''
 
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val = 0, next = None):
-#         self.val = val
-#         self.next = None
+
+class ListNode:
+    def __init__(self, val = 0, next = None):
+        self.val = val
+        self.next = None
 
 #Iterative
 #Time Complexity - O(n+m), Space Complexity - O(1)
