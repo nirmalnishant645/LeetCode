@@ -9,35 +9,30 @@ Output: 1->1->2->3->4->4
 
 # Definition for singly-linked list.
 # class ListNode:
-#     def __init__(self, x):
-#         self.val = x
+#     def __init__(self, val = 0, next = None):
+#         self.val = val
 #         self.next = None
 
 #Iterative
 #Time Complexity - O(n+m), Space Complexity - O(1)
+
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
-        
-        head = cur_node = ListNode()
-        
+        res = cur = ListNode()
         while l1 and l2:
-            
-            if l1.val < l2.val:
-                cur_node.next = l1
+            if l1.val <= l2.val:
+                cur.next = l1
                 l1 = l1.next
-                
             else:
-                cur_node.next = l2
+                cur.next = l2
                 l2 = l2.next
-                
-            cur_node = cur_node.next
-        
-        cur_node.next = l1 or l2
-        
-        return head.next
+            cur = cur.next
+        cur. next = l1 or l2
+        return res.next
 
 #Recursive
 #Time Complexity - O(n+m), Space Complexity - O(n+m)
+
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
         if not l1 or not l2: return l1 or l2
