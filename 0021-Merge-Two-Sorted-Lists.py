@@ -43,3 +43,31 @@ class Solution:
         else:
             l2.next = self.mergeTwoLists(l2.next, l1)
             return l2
+
+# Custom Input Check 
+
+s = Solution()
+
+l1_1 = ListNode(1)
+l1_2 = ListNode(2)
+l1_3 = ListNode(4)
+
+l1_1.next = l1_2
+l1_2.next = l1_3
+
+# l1: 1 => 2 => 4
+
+l2_1 = ListNode(1)
+l2_2 = ListNode(3)
+l2_3 = ListNode(4)
+
+l2_1.next = l2_2
+l2_2.next = l2_3
+
+# l2: 1 => 3 => 4
+
+answer = s.mergeTwoLists(l1_1, l2_1)
+
+while answer:
+    print(answer.val)
+    answer = answer.next
