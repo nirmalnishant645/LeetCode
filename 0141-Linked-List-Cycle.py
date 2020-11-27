@@ -27,10 +27,13 @@ Can you solve it using O(1) (i.e. constant) memory?
 '''
 
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+# Hare Tortoise Algorithm
 
 class Solution:
     def hasCycle(self, head: ListNode) -> bool:
