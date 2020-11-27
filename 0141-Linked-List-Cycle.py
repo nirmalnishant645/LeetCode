@@ -44,3 +44,23 @@ class Solution:
             if slow == fast:
                 return True
         return False
+
+# Custom Input Check
+
+s = Solution()
+
+node1 = ListNode(1)
+node2 = ListNode(5)
+node3 = ListNode(11)
+node4 = ListNode(8)
+node5 = ListNode(9)
+
+node1.next = node2
+node2.next = node3
+node3.next = node4
+node4.next = node5
+node5.next = node2
+
+answer = s.hasCycle(node1)
+
+print(answer)
