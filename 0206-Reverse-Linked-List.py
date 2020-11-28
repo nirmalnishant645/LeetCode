@@ -11,10 +11,11 @@ Follow up:
 A linked list can be reversed either iteratively or recursively. Could you implement both?
 '''
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
 # Iteratively
 # Time Complexity - O(n), Space Complexity - O(1)
@@ -25,6 +26,16 @@ class Solution:
         while cur:
             cur.next, res, cur = res, cur, cur.next
         return res
+
+# Iteratively by making a new previous node
+# Time Complexity - O(n), Space Complexity - O(1)
+
+class Solution:
+    def reverseList(self, head: ListNode) -> ListNode:
+        cur, res = head, ListNode()
+        while cur:
+            cur.next, res.next, cur = res.next, cur, cur.next
+        return res.next
 
 # Recursively
 #Time Complexity - O(n), Space Complexity - O(n)
