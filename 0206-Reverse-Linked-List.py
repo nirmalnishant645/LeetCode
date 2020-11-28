@@ -12,22 +12,23 @@ A linked list can be reversed either iteratively or recursively. Could you imple
 '''
 # Definition for singly-linked list.
 # class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 
-#Iteratively
+# Iteratively
 # Time Complexity - O(n), Space Complexity - O(1)
+
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
-        prev = None
-        cur_node = head
-        while cur_node:
-            cur_node.next, prev, cur_node = prev, cur_node, cur_node.next
-        return prev
+        cur, res = head, None
+        while cur:
+            cur.next, res, cur = res, cur, cur.next
+        return res
 
-#Recursively
+# Recursively
 #Time Complexity - O(n), Space Complexity - O(n)
+
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
         if not head or not head.next:
