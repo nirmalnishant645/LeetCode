@@ -19,23 +19,16 @@ Could you do this in one pass?
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+
 class Solution:
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
-        
-        left = right = head
-        
-        for i in range(n):
-            
-            right = right.next
-            
-        if not right:
-            return left.next
-            
-        while right.next:
-            
-            left = left.next
-            right = right.next
-            
-        left.next = left.next.next
-        
+        first = last = head
+        for _ in range(n):
+            last = last.next
+        if not last:
+            return first.next
+        while last.next:
+            last = last.next
+            first = first.next
+        first.next = first.next.next
         return head
