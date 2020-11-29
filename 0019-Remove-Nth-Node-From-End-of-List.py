@@ -33,3 +33,22 @@ class Solution:
             first = first.next
         first.next = first.next.next
         return head
+
+# Check Custom Input
+
+s = Solution()
+
+node1 = ListNode(1)
+node2 = ListNode(3)
+node3 = ListNode(5)
+node4 = ListNode(7)
+
+node1.next = node2
+node2.next = node3
+node3.next = node4
+
+answer = s.removeNthFromEnd(node1, 2) # 1 => 3 => 7
+
+while answer:
+    print(answer.val)
+    answer = answer.next
