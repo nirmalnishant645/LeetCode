@@ -45,3 +45,24 @@ class Solution:
         odd.next = evenList
         
         return head
+
+# Custom Input Check
+
+node1 = ListNode(10)
+node2 = ListNode(20)
+node3 = ListNode(30)
+node4 = ListNode(40)
+node5 = ListNode(50)
+
+node1.next = node2
+node2.next = node3
+node3.next = node4
+node4.next = node5
+
+s = Solution()
+
+answer = s.oddEvenList(node1) # 10 => 30 => 50 => 20 => 40
+
+while answer:
+    print(answer)
+    answer = answer.next
