@@ -48,3 +48,30 @@ class Solution:
                 j -= 1
                 last -= 1
         return lists[0]
+
+# Method 2
+
+class Solution:
+    def mergeKLists(self, lists: List[ListNode]) -> ListNode:
+        if not lists:
+            return None
+        last = len(lists) - 1
+        while last:
+            i, j = 0, last
+            while i < j:
+                res = cur = ListNode()
+                first, second = lists[i], lists[j]
+                while first and second:
+                    if first.val <= second.val:
+                        cur.next = first
+                        first = first.next
+                    else:
+                        cur.next = second
+                        second = second.next
+                    cur = cur.next
+                cur.next = first or second
+                lists[i] = res.next
+                i += 1
+                j -= 1
+                last -= 1
+        return lists[0]
