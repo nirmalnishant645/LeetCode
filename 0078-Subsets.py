@@ -17,3 +17,23 @@ Constraints:
 -10 <= nums[i] <= 10
 All the numbers of nums are unique.
 '''
+
+# Using Backtracking
+
+class Solution:
+    
+    def backtrack(self, nums, res, cur, index):
+        if index > len(nums):
+            return
+        res.append(cur[:])
+        for i in range(index, len(nums)):
+            if nums[i] not in cur:
+                cur.append(nums[i])
+                self.backtrack(nums, res, cur, i)
+                cur.pop()
+        return
+    
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        res, cur = [], []
+        self.backtrack(nums, res, cur, 0)
+        return res
