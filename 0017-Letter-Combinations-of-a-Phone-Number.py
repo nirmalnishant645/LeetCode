@@ -12,6 +12,33 @@ Note:
 Although the above answer is in lexicographical order, your answer could be in any order you want.
 '''
 
+# Method1 using Backtracking
+
+class Solution:
+    
+    def backtrack(self, res, m, digits, combination, index):
+        if index > len(digits):
+            return
+        if len(combination) == len(digits):
+            res.append(combination)
+            return
+        cur_digit = digits[index]
+        cur_string = m[cur_digit]
+        for s in cur_string:
+            self.backtrack(res, m, digits, combination + s, index + 1)
+    
+    def letterCombinations(self, digits: str) -> List[str]:
+        res = []
+        if not digits:
+            return res
+        
+        m = {'2' : 'abc', '3' : 'def', '4' : 'ghi', '5' : 'jkl', '6' : 'mno', '7' : 'pqrs', '8' : 'tuv', '9' : 'wxyz'}
+        
+        self.backtrack(res, m, digits, '', 0)
+        
+        return res
+
+# Method 2 using Backtracking but shorthand 
 
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
