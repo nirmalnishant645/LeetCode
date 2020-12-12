@@ -40,6 +40,7 @@
 - [x] [0074 Search a 2D Matrix](0074-Search-a-2D-Matrix.py)
 - [x] [0075 Sort Colors](0075-Sort-Colors.py)
 - [x] [0078 Subsets](0078-Subsets.py)
+- [x] [0079 Word Search](0079-Word-Search.py)
 - [x] [0088 Merge Sorted Array](0088-Merge-Sorted-Array.py)
 - [x] [0091 Decode Ways](0091-Decode-Ways.py)
 - [x] [0094 Binary Tree Inorder Traversal](0094-Binary-Tree-Inorder-Traversal.py)
