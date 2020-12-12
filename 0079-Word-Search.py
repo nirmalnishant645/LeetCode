@@ -24,3 +24,41 @@ board and word consists of only lowercase and uppercase English letters.
  
 Follow up: Could you use search pruning to make your solution faster with a larger board?
 '''
+
+# Using Backtracking
+
+class Solution:
+    
+    x = [0, 0, -1, 1]
+    y = [1, -1, 0, 0]
+    
+    def search(self, board, word, m, n, cur):
+        if m < 0 or m >= len(board) or n < 0 or n >= len(board[m]) or board[m][n] == '':
+            return False
+        
+        cur += board[m][n]
+        
+        if len(cur) > len(word):
+            return False
+        if cur[len(cur)-1] != word[len(cur)-1]:
+            return False
+        if cur == word:
+            return True
+        
+        temp, board[m][n] = board[m][n], ''
+        
+        for i in range(4):
+            if self.search(board, word, m+self.x[i], n+self.y[i], cur):
+                return True
+        board[m][n] = temp
+        return False
+    
+    def exist(self, board: List[List[str]], word: str) -> bool:
+        if not word:
+            return True
+        
+        for i in range(len(board)):
+            for  j in range(len(board[i])):
+                if board[i][j] ==  word[0] and self.search(board, word, i, j, ''):
+                    return True
+        return False
