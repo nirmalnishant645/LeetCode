@@ -37,3 +37,23 @@ Constraints:
 All elements of candidates are distinct.
 1 <= target <= 500
 '''
+
+# Using Backtracking
+
+class Solution:
+    
+    def backtrack(self, candidates, target, res, cur, index, summ):
+        if summ == target:
+            res.append(cur[:])
+        elif summ < target:
+            for i in range(index, len(candidates)):
+                cur.append(candidates[i])
+                self.backtrack(candidates, target, res, cur, i, sum(cur))
+                cur.pop()
+        return
+    
+    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+        res = []
+        cur = []
+        self.backtrack(candidates, target, res, cur, 0, 0)
+        return res
