@@ -14,14 +14,19 @@ Output:
   [3,2,1]
 ]
 '''
+
+# Using Backtracking
+
 class Solution:
-    def permute(self, nums: List[int]) -> List[List[int]]:
-        res = []
-        self.permutation(nums, [], res)
-        return res
-        
-    def permutation(self, nums, path, res):
+    
+    def backtrack(self, nums, res, cur):
         if not nums:
-            res.append(path)
+            res.append(cur)
         for i in range(len(nums)):
-            self.permutation(nums[:i] + nums[i + 1:], path + [nums[i]], res)
+            self.backtrack(nums[:i] + nums[i+1:], res, cur + [nums[i]])
+    
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        cur = []
+        res = []
+        self.backtrack(nums, res, cur)
+        return res
