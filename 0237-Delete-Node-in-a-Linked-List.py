@@ -25,6 +25,8 @@ The given node will not be the tail and it will always be a valid node of the li
 Do not return anything from your function.
 '''
 
+# Solution by modifying in Place
+
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, x):
@@ -33,8 +35,4 @@ Do not return anything from your function.
 
 class Solution:
     def deleteNode(self, node):
-        """
-        :type node: ListNode
-        :rtype: void Do not return anything, modify node in-place instead.
-        """
-        node.val, node.next = node.next.val, node.next.next        
+        node.val, node.next = node.next.val, node.next.next
