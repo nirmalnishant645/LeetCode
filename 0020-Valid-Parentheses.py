@@ -28,24 +28,21 @@ Example 5:
 Input: "{[]}"
 Output: true
 '''
+
 # Time Complexity: O(n)
 # Space Complexity: O(n)
+
+# Solution using Stack
+
 class Solution:
     def isValid(self, s: str) -> bool:
-        
-        parentheses = {')' : '(', ']' : '[', '}' : '{'}
-        
-        stack = []
-        
         if len(s) % 2:
             return False
-        
-        for paren in s:
-            
-            if paren in parentheses.values():
-                stack.append(paren)
-            
-            elif not stack or parentheses[paren] != stack.pop():
+        brackets = {'(': ')', '{': '}', '[': ']'}
+        stack = []
+        for bracket in s:
+            if bracket in brackets.keys():
+                stack.append(bracket)
+            elif not stack or brackets[stack.pop()] != bracket:
                 return False
-            
         return not stack
