@@ -25,15 +25,16 @@ class Solution:
     def backtrack(self, nums, res, cur, index):
         if index > len(nums):
             return
-        res.append(cur[:])
+        res.append(cur.copy())
         for i in range(index, len(nums)):
-            if nums[i] not in cur:
+            if nums[i] not in  cur:
                 cur.append(nums[i])
                 self.backtrack(nums, res, cur, i)
                 cur.pop()
         return
-    
+        
     def subsets(self, nums: List[int]) -> List[List[int]]:
-        res, cur = [], []
+        cur = []
+        res = []
         self.backtrack(nums, res, cur, 0)
         return res
