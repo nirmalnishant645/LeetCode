@@ -27,6 +27,18 @@ class Solution:
             cur.next, res, cur = res, cur, cur.next
         return res
 
+# Python Free Logic using Temporary Variable
+
+class Solution:
+    def reverseList(self, head: ListNode) -> ListNode:
+        cur, res = head, None
+        while cur:
+            temp = cur.next
+            cur.next = res
+            res = cur
+            cur = temp
+        return res
+
 # Iteratively by making a new previous node
 # Time Complexity - O(n), Space Complexity - O(1)
 
