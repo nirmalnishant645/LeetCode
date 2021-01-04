@@ -6,25 +6,22 @@ Input: "Let's take LeetCode contest"
 Output: "s'teL ekat edoCteeL tsetnoc"
 Note: In the string, each word is separated by single space and there will not be any extra space in the string.
 '''
+
 class Solution:
-    def reverseWords(self, s: str) -> str:    
-        s = list(s)
-        start = 0
-        
-        for i, let in enumerate(s):
-            if let == ' ':
-                self.reverse(s, start, i - 1)
-                start = i + 1
-            if i == len(s) - 1:
-                self.reverse(s, start, i)
-            
-        return ''.join(s)
-            
-    def reverse(self, word, start, end):
-        
+    def reverseString(self, sub, start, end):
         while start < end:
-            
-            word[start], word[end] = word[end], word[start]
-            
+            sub[start], sub[end] = sub[end], sub[start]
             start += 1
             end -= 1
+    
+    def reverseWords(self, s: str) -> str:
+        s = list(s)
+        start = 0
+        for i, char in enumerate(s):
+            if char == ' ':
+                self.reverseString(s, start, i - 1)
+                start = i + 1
+            if i == len(s) - 1:
+                self.reverseString(s, start, i)
+        
+        return ''.join(s)
