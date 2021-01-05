@@ -18,16 +18,16 @@ from typing import List
 
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        n = count = 0
+        res = count = 0
         for num in nums:
-            if num == n:
+            if not count:
+                res = num
                 count += 1
-            elif not count:
-                n = num
+            elif num == res:
                 count += 1
             else:
                 count -= 1
-        return n
+        return res
 
 # O(1) Space Complexity Solution 2
 
