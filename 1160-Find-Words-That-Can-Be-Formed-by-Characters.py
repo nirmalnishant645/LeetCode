@@ -27,24 +27,3 @@ Note:
 1 <= words[i].length, chars.length <= 100
 All strings contain lowercase English letters only.
 '''
-class Solution:
-    def countCharacters(self, words: List[str], chars: str) -> int:
-        res = 0
-        char_counts = [0] * 26
-        
-        for char in chars:
-            char_counts[ord(char) - ord('a')] += 1
-            
-        for word in words:
-            temp = list(char_counts)
-            valid_char_count = 0
-            
-            for char in word:
-                if temp[ord(char) - ord('a')]:
-                    valid_char_count += 1
-                    temp[ord(char) - ord('a')] -= 1
-                    
-            if valid_char_count == len(word):
-                res += valid_char_count
-        
-        return res
