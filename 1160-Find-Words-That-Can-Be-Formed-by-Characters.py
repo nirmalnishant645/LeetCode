@@ -51,3 +51,25 @@ class Solution:
                 res += valid_char_count
         
         return res
+
+# Method 2 using HashTable
+
+class Solution:
+    def countCharacters(self, words: List[str], chars: str) -> int:
+        chars_dict = {}
+        for char in chars:
+            if char in chars_dict:
+                chars_dict[char] += 1
+            else:
+                chars_dict[char] = 1
+        res = 0
+        for word in words:
+            summ = 0
+            temp = chars_dict.copy()
+            for char in word:
+                if char in temp and temp[char]:
+                    temp[char] -= 1
+                    summ += 1
+            if summ == len(word):
+                res += summ
+        return res
