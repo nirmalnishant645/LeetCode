@@ -56,3 +56,8 @@ class Solution:
             right += 1
         return max_len
 
+# Custom Input Check
+
+s = Solution()
+answer = s.lengthOfLongestSubstring("nishant") # 6
+print(answer)
