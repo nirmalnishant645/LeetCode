@@ -32,3 +32,27 @@ class Solution:
             cur.next = ListNode(value)
             cur = cur.next
         return res.next
+
+# Check Custom Input
+
+s = Solution()
+
+l1_node1 = ListNode(2)
+l1_node2 = ListNode(4)
+l1_node3 = ListNode(3)
+
+l1_node1.next = l1_node2
+l1_node2.next = l1_node3
+
+l2_node1 = ListNode(5)
+l2_node2 = ListNode(6)
+l2_node3 = ListNode(4)
+
+l2_node1.next = l2_node2
+l2_node2.next = l2_node3
+
+answer = s.addTwoNumbers(l1_node1, l2_node1)
+
+while answer:
+    print(answer.val)
+    answer = answer.next
