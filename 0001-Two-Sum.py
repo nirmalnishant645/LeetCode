@@ -23,6 +23,8 @@ class Solution:
                 return [dict[temp], i]
             dict.update({nums[i] : i})
 
+# Using Hash Tables (New)
+
 # Check Custom Input
 
 s = Solution()
