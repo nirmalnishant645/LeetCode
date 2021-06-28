@@ -13,6 +13,19 @@ If you have figured out the O(n) solution, try coding another solution using the
 
 # Using Sliding Window
 
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        maxSum = nums[0]
+        curSum = 0
+        
+        for num in nums:
+            if curSum < 0:
+                curSum = 0
+            curSum += num
+            maxSum = max(curSum, maxSum)
+        return maxSum
+        
+
 # Using Kadane's Algorithm
 
 class Solution:
