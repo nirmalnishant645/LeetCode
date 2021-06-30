@@ -27,3 +27,15 @@ class Solution:
         return max_profit
 
 # Same Approach, Different Solution
+
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        buy, sell, max_profit = 0, 1, 0
+        while sell < len(prices):
+            if prices[sell] > prices[buy]:
+                profit = prices[sell] - prices[buy]
+                max_profit = profit if profit > max_profit else max_profit
+            else:
+                buy = sell
+            sell += 1
+        return max_profit
