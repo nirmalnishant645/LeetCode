@@ -25,3 +25,5 @@ class Solution:
             min_price = price if price < min_price else min_price
             max_profit = price - min_price if price - min_price > max_profit else max_profit
         return max_profit
+
+# Same Approach, Different Solution
