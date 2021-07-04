@@ -16,6 +16,17 @@ Explanation: The result cannot be 2, because [-2,-1] is not a subarray.
 
 # Dynamic Programming
 
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        res = max(nums)
+        curMin = curMax = 1
+        for num in nums:
+            temp = curMax * num
+            curMax = max(temp, num * curMin, num)
+            curMin = min(temp, num * curMin, num)
+            res = max(res, curMax, curMin)
+        return res
+
 # Simlar approach, different steps
 
 class Solution:
