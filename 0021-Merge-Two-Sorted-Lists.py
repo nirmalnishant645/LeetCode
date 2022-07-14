@@ -18,18 +18,18 @@ class ListNode:
 #Time Complexity - O(n+m), Space Complexity - O(1)
 
 class Solution:
-    def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
-        res = cur = ListNode()
-        while l1 and l2:
-            if l1.val <= l2.val:
-                cur.next = l1
-                l1 = l1.next
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        cur_node = pre_node = ListNode()
+        while list1 and list2:
+            if list1.val < list2.val:
+                cur_node.next = list1
+                list1 = list1.next
             else:
-                cur.next = l2
-                l2 = l2.next
-            cur = cur.next
-        cur. next = l1 or l2
-        return res.next
+                cur_node.next = list2
+                list2 = list2.next
+            cur_node = cur_node.next
+        cur_node.next = list1 if list1 else list2
+        return pre_node.next
 
 #Recursive
 #Time Complexity - O(n+m), Space Complexity - O(n+m)
