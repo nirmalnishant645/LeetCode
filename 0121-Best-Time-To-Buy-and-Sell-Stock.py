@@ -39,3 +39,15 @@ class Solution:
                 buy = sell
             sell += 1
         return max_profit
+
+# Kadane's Algorithm
+
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+            profit = max_profit = 0
+            
+            for i in range(1, len(prices)):
+                profit = max(0, profit + prices[i] - prices[i-1])
+                max_profit = max(max_profit, profit)
+                
+            return max_profit
