@@ -26,7 +26,7 @@ class Solution:
         return maxSum
         
 
-# Using Kadane's Algorithm
+# Using Kadane's Algorithm METHOD 1
 
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
@@ -37,5 +37,17 @@ class Solution:
             
             cur_sum = max(nums[i] + cur_sum, nums[i])
             max_sum = max(cur_sum, max_sum)
+            
+        return max_sum
+
+# Using Kadane's Algorithm METHOD 2
+
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        cur_sum, max_sum = 0, nums[0]
+        
+        for num in nums:
+            cur_sum = max(num, cur_sum + num)
+            max_sum = max(cur_sum, max_sum) 
             
         return max_sum
