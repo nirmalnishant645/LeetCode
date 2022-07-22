@@ -38,11 +38,11 @@ class Solution:
     def isValid(self, s: str) -> bool:
         if len(s) % 2:
             return False
-        brackets = {'(': ')', '{': '}', '[': ']'}
+        parens = {'(' : ')', '{' : '}', '[' : ']'}
         stack = []
-        for bracket in s:
-            if bracket in brackets.keys():
-                stack.append(bracket)
-            elif not stack or brackets[stack.pop()] != bracket:
+        for paren in s:
+            if paren in parens.keys():
+                stack.append(paren)
+            elif not stack or paren != parens[stack.pop()]:
                 return False
         return not stack
