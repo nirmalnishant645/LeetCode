@@ -49,6 +49,9 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 '''
 # Time Complexity: O(n)
 # Space Complexity: O(1)
+
+# Method 1
+
 class Solution:
     def romanToInt(self, s: str) -> int:
         
