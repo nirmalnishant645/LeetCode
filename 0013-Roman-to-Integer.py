@@ -70,3 +70,17 @@ class Solution:
                 result += symbol_value[s[i]]
                 
         return result
+
+# Method 2 (Checking the value of next character and subtracting if more than the current character and adding if less)
+
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        roman_numerals = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
+        
+        res = 0
+        for index in range(len(s) - 1):
+            if roman_numerals[s[index]] < roman_numerals[s[index + 1]]:
+                res -= roman_numerals[s[index]]
+            else:
+                res += roman_numerals[s[index]]
+        return res + roman_numerals[s[-1]]
