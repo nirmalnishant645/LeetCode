@@ -37,5 +37,5 @@ class Solution:
 # Check Custom Input
 
 s = Solution()
-answer = s.twoSum([3,2,1,5], 8) # [0,3]
+answer = s.twoSum([3,2,1,5], 8) # Testing [0,3]
 print(answer)
